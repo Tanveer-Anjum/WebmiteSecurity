@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { FaFingerprint } from "react-icons/fa";
 import { motion } from "framer-motion";
-
-
+import ScrollToTop from "./ScrollToTop";
 
 export default function TestCard() {
   const testimonials = [
@@ -10,7 +9,7 @@ export default function TestCard() {
       quote: "Morgaan Smith is effectively a review or recommendation from a client...",
       name: "Morgaan Smith",
       title: "Client",
-      avatar:"/assets/Images/1.jpg",
+      avatar: "/assets/Images/1.jpg",
       image: "/assets/Images/b1.jpg",
     },
     {
@@ -18,64 +17,100 @@ export default function TestCard() {
       name: "Jane Doe",
       title: "Marketing Director",
       avatar: "/assets/Images/11.jpeg",
-      image: "/assets/Images/b1.jpg"
+      image: "/assets/Images/b1.jpg",
     },
     {
       quote: "Working with them has been a game-changer for our business...",
       name: "John Appleseed",
       title: "CEO, Tech Solutions",
       avatar: "/assets/Images/44.jpg",
-      image: "./assets/Images/security.jpeg"
-    }
+      image: "/assets/Images/security.jpeg",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const current = testimonials[currentIndex];
 
   const next = () => setCurrentIndex((currentIndex + 1) % testimonials.length);
-  const prev = () => setCurrentIndex((currentIndex - 1 + testimonials.length) % testimonials.length);
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const prev = () =>
+    setCurrentIndex((currentIndex - 1 + testimonials.length) % testimonials.length);
+  const scrollToTop = () =>
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Animation Variants
+  const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
+
+  const fadeRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+  };
 
   return (
-    <div className="bg-gray-50 min-h-screen flex flex-col items-center justify-center p-6 relative">
-
+    <div className="bg-gray-300 min-h-screen flex flex-col items-center justify-center p-4 relative">
+      {/* Header */}
       <header className="text-center mb-12 space-y-3">
         <motion.span
-          className="text-blue-600 font-semibold px-3 py-1 rounded-full text-sm flex justify-center items-center gap-2"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="text-blue-600 font-semibold px-3 py-2 rounded-full text-sm flex justify-center items-center gap-2"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
           <FaFingerprint /> Testimonials
         </motion.span>
 
         <motion.h1
           className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, type: "spring" }}
         >
           LOVES FROM SPECIAL CLIENTS
         </motion.h1>
       </header>
 
-      <div className="bg-white rounded-3xl shadow-lg p-8 md:p-12 w-full max-w-5xl mx-auto transition-all">
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-
-         
+      {/* Card */}
+      <motion.div
+        className="bg-white rounded-3xl shadow-lg p-8 md:p-12 w-full max-w-5xl mx-auto transition-all"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9 }}
+      >
+        <div className="grid md:grid-cols-2 gap-60 items-center">
+          {/* Left Text */}
           <motion.div
             className="flex flex-col space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold text-gray-800">What Our Clients Are Saying</h2>
-            <p className="text-gray-600 text-lg leading-relaxed">"{current.quote}"</p>
+            <h2 className="text-3xl font-bold text-gray-800">
+              What Our Clients Are Saying
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              "{current.quote}"
+            </p>
             <div className="flex items-center space-x-4 pt-2">
-              <img src={current.avatar} alt={current.name} className="w-16 h-16 rounded-full object-cover" />
+              <motion.img
+                src={current.avatar}
+                alt={current.name}
+                className="w-16 h-16 rounded-full object-cover shadow"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 120, duration: 0.6 }}
+                viewport={{ once: true }}
+              />
               <div>
                 <p className="font-semibold text-gray-900">{current.name}</p>
                 <p className="text-gray-500">{current.title}</p>
@@ -83,53 +118,49 @@ export default function TestCard() {
             </div>
           </motion.div>
 
-        
+          {/* Right Image */}
           <motion.div
-            className="w-full h-60 md:h-full rounded-2xl overflow-hidden"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="w-full h-full md:h-full rounded-2xl overflow-hidden shadow-lg"
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
           >
-            <img
+            <motion.img
               src={current.image}
               alt="Client"
               className="w-full h-full object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.6 }}
             />
           </motion.div>
         </div>
-<div className="flex mt-6 gap-6 justify-center items-center">
-  <button 
-    onClick={prev} 
-    className="rounded-circle h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-    </svg>
-  </button>
 
-  <button 
-    onClick={next} 
-    className="rounded-circle h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-    </svg>
-  </button>
-</div>
-
-      </div>
+        {/* Navigation */}
+        <div className="flex mt-6 gap-6 justify-center items-center">
+          <button
+            onClick={prev}
+            className="rounded-full h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
+          >
+            ←
+          </button>
+          <button
+            onClick={next}
+            className="rounded-full h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
+          >
+            →
+          </button>
+        </div>
+      </motion.div>
 
       {/* Scroll Up Button */}
-      <button 
-        onClick={scrollToTop} 
+      {/* <button
+        onClick={scrollToTop}
         className="fixed bottom-8 right-8 bg-white rounded-full p-2 shadow border border-gray-400 hover:bg-blue-500 hover:text-gray-300 transition"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-        </svg>
-      </button>
-
+        ↑
+      </button> */}
+      <ScrollToTop></ScrollToTop>
     </div>
   );
 }

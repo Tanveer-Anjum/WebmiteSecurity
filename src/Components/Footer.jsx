@@ -1,8 +1,7 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaGlobe, FaLinkedin, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
-// import footer from "../assets/Images/Asset5.png"; 
-export default function Footer() {
 
+export default function Footer() {
   const socialLinks = [
     { name: 'LinkedIn', href: '#', icon: <FaLinkedin /> },
     { name: 'Twitter', href: '#', icon: <FaTwitter /> },
@@ -26,32 +25,50 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-blue-900 text-white font-sans">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-          {/* Column 1: Logo & Social */}
+    <footer className="bg-blue-900 text-gray-300 font-sans">
+      
+      {/* Top Social Bar */}
+      <section className=" border-b border-white px-6 py-4 flex flex-col md:flex-row items-center justify-between">
           <div>
-            <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-16 mb-4" />
-            <p className="text-white text-sm leading-relaxed hover:bg-blue-500">
+            <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-20 mb-4" />
+            <p className="text-md leading-relaxed">
               Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
             </p>
-            <div className="flex space-x-3 mt-6">
-              {socialLinks.map(link => (
-                <a key={link.name} href={link.href} className="w-8 h-8 bg-white text-blue-900 rounded flex items-center justify-center hover:bg-gray-200 transition no-underline">
-                  {link.icon}
-                </a>
-              ))}
-            </div>
           </div>
+        <div className="flex space-x-3 px-12 py-4">
+          {socialLinks.map(link => (
+            <a 
+              key={link.name} 
+              href={link.href} 
+              className="w-9 h-9 bg-gray-700 text-white rounded-full flex items-center justify-center hover:bg-blue-300 hover:text-white transition"
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-12 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
+          
+          {/* Column 1: Logo & About */}
+        
+
+
+
+
+
+
+
 
           {/* Column 2: Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services We Offer</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white text-decoration-none ml-8">Services We Offer</h3>
             <ul className="space-y-3 text-sm">
               {serviceLinks.map(link => (
                 <li key={link}>
-                  <a href="#" className="text-white transition  text-decoration-none hover:underline">{link}</a>
+                  <a href="#" className="hover:underline hover:text-blue-700  transition text-decoration-none text-white">{link}</a>
                 </li>
               ))}
             </ul>
@@ -59,11 +76,11 @@ export default function Footer() {
 
           {/* Column 3: Useful Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white ml-8">Useful Links</h3>
             <ul className="space-y-3 text-sm">
               {usefulLinks.map(link => (
                 <li key={link}>
-                  <a href="#" className="text-white transition text-decoration-none">{link}</a>
+                  <a href="#" className="hover:underline hover:text-blue-400 transition text-white text-decoration-none">{link}</a>
                 </li>
               ))}
             </ul>
@@ -71,12 +88,12 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white ml-8">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               {contactInfo.map(item => (
-                <li key={item.text} className="flex items-center text-white">
-                  <span className="mr-3">{item.icon}</span>
-                  <a href={item.href} className="text-white transition text-decoration-none">{item.text}</a>
+                <li key={item.text} className="flex items-center text-decoration-none text-white">
+                  <span className="mr-3 text-decoration-none text-white">{item.icon}</span>
+                  <a href={item.href} className="hover:text-blue-400 transition  text-decoration-none text-white">{item.text}</a>
                 </li>
               ))}
             </ul>
@@ -86,17 +103,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-    <div className="border-t border-white">
-  <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
-    <p className="text-white mb-2 md:mb-0">
-      Copyright &copy; {new Date().getFullYear()} Shehrity. All Rights Reserved
-    </p>
-    <div className="flex space-x-6">
-      <a href="#" className="text-white transition no-underline">Terms & Conditions</a>
-      <a href="#" className="text-white hover:text-white transition no-underline">Privacy Policy</a>
-    </div>
-  </div>
-</div>
+      <div className="border-t border-white">
+        <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p>
+            Copyright &copy; {new Date().getFullYear()} Shehrity. All Rights Reserved
+          </p>
+          <div className="flex space-x-6 mt-2 md:mt-0">
+            <a href="#" className="hover:text-blue-400 transition text-white text-decoration-none">Terms & Conditions</a>
+            <a href="#" className="hover:text-blue-400 transition  text-white text-decoration-none">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
 
     </footer>
   );

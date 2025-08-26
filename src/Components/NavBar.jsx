@@ -19,11 +19,11 @@ const NavBar = () => {
             />
           </a>
         </div>
-<ul className="flex space-x-8 text-gray-900 font-medium justify-center text-center ">
+<ul className="flex space-x-8 font-medium justify-center text-center ">
   <li>
     <a
       href="#home"
-      className="relative p-3  after:absolute after:w-0 after:h-[2px] after:bg-blue-800  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
+      className="relative p-3  after:absolute after:w-0  text-black after:h-[2px] after:bg-blue-800  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
     >
       Home
     </a>
@@ -31,7 +31,7 @@ const NavBar = () => {
   <li>
     <a
       href="#about"
-      className="relative py-3 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-800  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
+      className="relative py-3 after:content-[''] after:absolute after:w-0  text-black after:h-[2px] after:bg-blue-800  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
     >
       About
     </a>
@@ -39,7 +39,7 @@ const NavBar = () => {
   <li>
     <a
       href="#services"
-      className="relative py-3 after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-800 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
+      className="relative py-3 after:content-[''] after:absolute after:w-0  text-black after:h-[2px] after:bg-blue-800 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
     >
       Services
     </a>
@@ -47,7 +47,7 @@ const NavBar = () => {
   <li>
     <a
       href="#contact"
-      className="relative py-3  after:content-[''] after:absolute after:w-0 after:h-[2px] after:bg-blue-800 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
+      className="relative py-3  after:content-[''] after:absolute after:w-0  text-black after:h-[2px] after:bg-blue-800 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
     >
       Contact
     </a>
@@ -57,7 +57,7 @@ const NavBar = () => {
 
 <button
   onClick={() => setShowVideo(true)}
-  className="bg-blue-700 text-white px-6 py-2 rounded-full hover:rounded-xl hover:bg-blue-800 transition-all duration-300 rounded-pill"
+  className="bg-blue-700 text-white px-6 py-2 rounded-full hover:rounded-xl  hover:bg-blue-900 transition-all duration-300 rounded-pill"
 >
   Switch to Digital Security
 </button>
@@ -65,13 +65,15 @@ const NavBar = () => {
 
     
       {showVideo && (
-        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black z-50 flex items-center w-full h-full justify-center overflow-hidden">
          
           <video
-            src="/assets/Videos/intro.mp4" 
-            autoPlay
-            controls
-            className="w-full h-full object-cover"
+            src="../assets/Videos/intro.mp4" 
+           autoPlay
+        loop
+        muted
+        playsInline 
+              className="absolute top-0 left-0 w-full h-full object-cover"
           />
 
         

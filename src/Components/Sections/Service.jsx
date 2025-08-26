@@ -34,7 +34,7 @@ const Service = () => {
   };
 
   return (
-    <div className="bg-blue-800 min-h-screen flex flex-col items-center justify-center py-10">
+    <div className="bg-blue-900 min-h-screen flex flex-col items-center justify-center py-10">
       <div className="w-full max-w-6xl flex flex-col items-center relative">
     
         <motion.div
@@ -68,7 +68,7 @@ const Service = () => {
           {/* Left Button */}
           <button
             onClick={handleBack}
-            className="absolute left-5 top-1/2 -translate-y-1/2 bg-indigo-400 w-8 h-8 text-white flex items-center justify-center  rounded-circle p-4 hover:bg-indigo-500 transition z-10"
+            className="absolute left-5 top-1/2 -translate-y-1/2 text-black bg-white rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition z-3"
           >
             &#8592;
           </button>
@@ -76,24 +76,29 @@ const Service = () => {
           {/* Right Button */}
           <button
             onClick={handleNext}
-            className="absolute right-5 top-1/2 -translate-y-1/2 bg-indigo-400 text-white w-8 h-8 flex items-center justify-center rounded-circle p-4 hover:bg-indigo-500 transition z-10"
+            className="absolute right-5 top-1/2 -translate-y-1/2 text-black bg-white rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition z-3"
           >
             &#8594;
           </button>
 
           
           {images.map((image, index) => (
-            <motion.img
-              key={index}
-              src={image}
-              alt={`image-${index}`}
-              className="rounded-[12px] absolute"
-              style={{ width: "40%" }}
-              initial="center"
-              animate={positions[positionIndexes[index]]}
-              variants={imageVariants}
-              transition={{ duration: 0.5 }}
-            />
+        <motion.img
+  key={index}
+  src={image}
+  alt={`image-${index}`}
+  className="rounded-[12px] absolute cursor-pointer"
+  style={{ width: "40%" }}
+  initial="center"
+  animate={positions[positionIndexes[index]]}
+  variants={imageVariants}
+  transition={{ duration: 0.5 }}
+  whileHover={{
+    scale: 0.7,              // zoom in slightly
+    zIndex: 5,              // bring it above others
+    boxShadow: "0px 10px 30px rgba(0,0,0,0.4)", // shadow effect
+  }}
+/>
           ))}
         </div>
       </div>

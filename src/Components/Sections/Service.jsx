@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import city1 from "../../assets/Images/girls.jpg";
-import city2 from "../../assets/Images/12.jpg";
-import city3 from "../../assets/Images/girls.jpg";
-import city4 from "../../assets/Images/13.png";
-import city5 from "../../assets/Images/22.jpg";
+import city1 from "/assets/Images/girls.jpg";
+import city2 from "/assets/Images/12.jpg";
+import city3 from "/assets/Images/girls.jpg";
+import city4 from "/assets/Images/13.png";
+import city5 from "/assets/Images/22.jpg";
 import { FaFingerprint } from "react-icons/fa";
 
 const Service = () => {

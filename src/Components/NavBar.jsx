@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/Images/Asset5.png"; // 🔹 Import your logo (adjust path if needed)
+import logo from "/assets/Images/Asset5.png"; // 🔹 Import your logo (adjust path if needed)
 
 const NavBar = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -68,7 +68,7 @@ const NavBar = () => {
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
          
           <video
-            src="../src/assets/Videos/intro.mp4" 
+            src="/assets/Videos/intro.mp4" 
             autoPlay
             controls
             className="w-full h-full object-cover"

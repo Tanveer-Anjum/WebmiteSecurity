@@ -4,7 +4,7 @@ import NavBar from './Components/NavBar';
 import HeroSection from './Components/HeroSection';
 import WhyChooseUs from './Components/WhyChooseUs';
 import Service from './Components/Sections/Service';
-import TestCard from './Components/TestimonailCard/TestCard';
+import TestCard from './Components/TestCard';
 import Footer from './Components/Footer';
 
 

@@ -2,28 +2,30 @@ import React, { useState } from 'react';
 import { FaFingerprint } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+
+
 export default function TestCard() {
   const testimonials = [
     {
       quote: "Morgaan Smith is effectively a review or recommendation from a client...",
       name: "Morgaan Smith",
       title: "Client",
-      avatar:"../src/assets/Images/1.jpg",
-      image: "../src/assets/Images/security.jpeg"
+      avatar:"/assets/Images/1.jpg",
+      image: "/assets/Images/b1.jpg",
     },
     {
       quote: "The team was incredibly responsive and delivered results...",
       name: "Jane Doe",
       title: "Marketing Director",
-      avatar: "../src/assets/Images/11.jpeg",
-      image: "../src/assets/Images/b1.jpg"
+      avatar: "/assets/Images/11.jpeg",
+      image: "/assets/Images/b1.jpg"
     },
     {
       quote: "Working with them has been a game-changer for our business...",
       name: "John Appleseed",
       title: "CEO, Tech Solutions",
-      avatar: "../src/assets/Images/44.jpg",
-      image: "../src/assets/Images/security.jpeg"
+      avatar: "/assets/Images/44.jpg",
+      image: "./assets/Images/security.jpeg"
     }
   ];
 

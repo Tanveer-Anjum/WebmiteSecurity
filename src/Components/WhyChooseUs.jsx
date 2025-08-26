@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sampleImg from "../assets/Images/girls.jpg"; 
-import smallImg from "../assets/Images/girls.jpg"; 
+import sampleImg from "/assets/Images/girls.jpg"; 
+import smallImg from "/assets/Images/girls.jpg"; 
 import { FaFingerprint } from "react-icons/fa";
 
 const WhyChooseUs = () => {

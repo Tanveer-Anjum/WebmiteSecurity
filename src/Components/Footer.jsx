@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Column 1: Logo & Social */}
           <div>
-            <img src="../src/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-16 mb-4" />
+            <img src="../assets/Images/Asset5.png" alt="Shehrity Logo" className="h-16 mb-4" />
             <p className="text-white text-sm leading-relaxed hover:bg-blue-500">
               Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
             </p>

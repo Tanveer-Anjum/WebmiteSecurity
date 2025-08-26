@@ -6,10 +6,10 @@ const NavBar = () => {
 
   return (
     <>
-      {/* Sticky Navbar */}
+   
       <nav className="top-0 bg-white shadow-md flex items-center justify-between px-6 py-3 ">
         
-        {/* Logo Left */}
+     
         <div className="flex items-center">
           <a href="#home">
             <img 
@@ -54,7 +54,7 @@ const NavBar = () => {
   </li>
 </ul>
 
-{/* Right Button */}
+
 <button
   onClick={() => setShowVideo(true)}
   className="bg-blue-700 text-white px-6 py-2 rounded-full hover:rounded-xl hover:bg-blue-800 transition-all duration-300 rounded-pill"
@@ -63,23 +63,23 @@ const NavBar = () => {
 </button>
       </nav>
 
-      {/* Fullscreen Video Overlay */}
+    
       {showVideo && (
         <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
-          {/* Fullscreen Video */}
+         
           <video
-            src="https://www.w3schools.com/html/mov_bbb.mp4" // 🔹 Replace with your video file
+            src="../src/assets/Videos/intro.mp4" 
             autoPlay
             controls
             className="w-full h-full object-cover"
           />
 
-          {/* Skip Button */}
+        
           <button
             onClick={() => setShowVideo(false)}
-            className="absolute top-4 right-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            className="absolute top-4 right-4 bg-blue-700 text-white px-4 py-2 rounded hover:bg-red-900"
           >
-            Skip
+            Skip to Side
           </button>
         </div>
       )}

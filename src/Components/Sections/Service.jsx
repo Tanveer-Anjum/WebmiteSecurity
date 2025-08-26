@@ -34,9 +34,9 @@ const Service = () => {
   };
 
   return (
-    <div className="bg-blue-700 min-h-screen flex flex-col items-center justify-center py-10">
+    <div className="bg-blue-800 min-h-screen flex flex-col items-center justify-center py-10">
       <div className="w-full max-w-6xl flex flex-col items-center relative">
-        {/* Text with scroll animation */}
+    
         <motion.div
           className="text-center mb-10"
           initial={{ opacity: 0, y:100 }}
@@ -45,9 +45,10 @@ const Service = () => {
           transition={{ duration: 1 }}
         >
           <div className="flex justify-center items-center mb-2">
-            <h3 className="text-white font-semibold fs-5 flex gap-2 items-center">
-              <FaFingerprint /> Our Service
-            </h3>
+              <span className="text-white font-semibold px-3 py-1 rounded-full text-sm flex gap-2"> <FaFingerprint /> Our Service</span>
+            {/* <h3 className="text-white font-semibold  flex gap-2 items-center text-sm"> */}
+             
+            {/* </h3> */}
           </div>
           <motion.h2
             className="text-white text-3xl font-bold"
@@ -67,7 +68,7 @@ const Service = () => {
           {/* Left Button */}
           <button
             onClick={handleBack}
-            className="absolute left-5 top-1/2 -translate-y-1/2 bg-indigo-400 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-500 transition z-10"
+            className="absolute left-5 top-1/2 -translate-y-1/2 bg-indigo-400 w-8 h-8 text-white flex items-center justify-center  rounded-circle p-4 hover:bg-indigo-500 transition z-10"
           >
             &#8592;
           </button>
@@ -75,12 +76,12 @@ const Service = () => {
           {/* Right Button */}
           <button
             onClick={handleNext}
-            className="absolute right-5 top-1/2 -translate-y-1/2 bg-indigo-400 text-white w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-500 transition z-10"
+            className="absolute right-5 top-1/2 -translate-y-1/2 bg-indigo-400 text-white w-8 h-8 flex items-center justify-center rounded-circle p-4 hover:bg-indigo-500 transition z-10"
           >
             &#8594;
           </button>
 
-          {/* Images */}
+          
           {images.map((image, index) => (
             <motion.img
               key={index}

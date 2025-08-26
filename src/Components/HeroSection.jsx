@@ -30,7 +30,7 @@ const HeroSection = () => {
 
     {/* Two Buttons */}
     <div className="mt-6 d-flex gap-3 ">
-      <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-pill transition ">
+      <button className="bg-blue-600 hover:bg-blue-800 px-6 py-3 rounded-pill transition ">
        Request the free Security Audit
       </button>
       <button className="bg-gray-800 hover:bg-gray-900 px-6 py-3 rounded-pill transition">

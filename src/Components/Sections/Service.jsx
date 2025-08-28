@@ -102,10 +102,10 @@ export default function Service() {
         </Swiper>
 
         {/* ✅ Custom Navigation Buttons */}
-        <button className="swiper-button-next-custom absolute left-0 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20 hover:bg-gray-500 duration-300">
+        <button className="swiper-button-next-custom absolute -left-8 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20 hover:bg-gray-500 duration-300">
          <BiSolidLeftArrowAlt />
         </button>
-        <button className="swiper-button-prev-custom absolute right-0 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20  hover:bg-gray-500 duration-300 ">
+        <button className="swiper-button-prev-custom absolute -right-8 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20  hover:bg-gray-500 duration-300 ">
           <BiSolidRightArrowAlt />
         </button>
       </div>

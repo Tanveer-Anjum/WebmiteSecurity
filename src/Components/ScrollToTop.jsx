@@ -33,7 +33,7 @@ const ScrollToTop = () => {
       <span className="text-2xl z-10"><BiSolidUpArrowAlt /></span>
 
       {/* Circular Progress */}
-      <svg className="absolute w-full h-full -rotate-90">
+      <svg className="absolute w-full h-full -rotate-120">
         <circle
           cx="28"
           cy="28"

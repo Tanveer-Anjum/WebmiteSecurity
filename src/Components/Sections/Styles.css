@@ -9,12 +9,13 @@
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 260px;   /* card width */
+  width: 340px;   /* card width */
   height: 340px;  /* card height */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
   transition: transform 0.3s ease;
+  border-radius: 2px solid transparent;
 }
 
 /* Image inside slide */

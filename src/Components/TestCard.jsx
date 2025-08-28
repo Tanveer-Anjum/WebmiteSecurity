@@ -3,6 +3,8 @@ import { FaFingerprint } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "../Components/Sass/TestCard.scss"; // ✅ import SCSS for ticket effect
 import ScrollToTop from "./ScrollToTop";
+import { BiSolidLeftArrowAlt } from "react-icons/bi";
+import { BiSolidRightArrowAlt } from "react-icons/bi";
 
 export default function TestCard() {
   const testimonials = [
@@ -120,19 +122,19 @@ export default function TestCard() {
       <div className="flex mt-6 gap-6 justify-center items-center">
         <button
           onClick={prev}
-          className="rounded-full h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
+          className="rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-200 transition duration-300"
         >
-          ←
+          <BiSolidLeftArrowAlt />
         </button>
         <button
           onClick={next}
-          className="rounded-full h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition"
+          className="rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-200 transition duration-300"
         >
-          →
+          <BiSolidRightArrowAlt />
         </button>
       </div>
 
-      <ScrollToTop />
+      <ScrollToTop /> 
     </div>
   );
 }

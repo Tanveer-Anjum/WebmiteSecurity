@@ -1,109 +1,114 @@
-import { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import city1 from "/assets/Images/girls.jpg";
-import city2 from "/assets/Images/12.jpg";
-import city3 from "/assets/Images/girls.jpg";
-import city4 from "/assets/Images/13.png";
-import city5 from "/assets/Images/22.jpg";
 import { FaFingerprint } from "react-icons/fa";
+import { BiSolidLeftArrowAlt } from "react-icons/bi";
+import { BiSolidRightArrowAlt } from "react-icons/bi";
 
-const Service = () => {
-  const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
 
-  const handleNext = () => {
-    setPositionIndexes((prevIndexes) =>
-      prevIndexes.map((prevIndex) => (prevIndex + 1) % 5)
-    );
-  };
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
-  const handleBack = () => {
-    setPositionIndexes((prevIndexes) =>
-      prevIndexes.map((prevIndex) => (prevIndex + 4) % 5)
-    );
-  };
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation"; // ✅ add navigation styles
+import "./Styles.css";
 
-  const images = [city1, city2, city3, city4, city5];
-  const positions = ["center", "left1", "left", "right", "right1"];
+// import required modules
+import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper/modules";
 
-  const imageVariants = {
-    center: { x: "0%", scale: 1.2, zIndex: 7 },
-    left1: { x: "-50%", scale: 0.7, zIndex: 3 },
-    left: { x: "-90%", scale: 0.5, zIndex: 2 },
-    right: { x: "90%", scale: 0.5, zIndex: 2 },
-    right1: { x: "50%", scale: 0.7, zIndex: 3 },
-  };
-
+export default function Service() {
   return (
-    <div className="bg-blue-900 min-h-screen flex flex-col items-center justify-center py-10">
-      <div className="w-full max-w-6xl flex flex-col items-center relative">
-    
-        <motion.div
-          className="text-center mb-10"
-          initial={{ opacity: 0, y:100 }}
+    <div className="bg-blue-900 min-h-screen flex flex-col items-center justify-center py-12">
+      {/* ✅ Heading */}
+      <motion.div
+        className="text-center mb-10"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+      >
+        <div className="flex justify-center items-center mb-2">
+          <span className="text-white font-semibold px-3 py-1 rounded-full text-sm flex gap-2">
+            <FaFingerprint /> Our Service
+          </span>
+        </div>
+        <motion.h2
+          className="text-white text-3xl md:text-4xl font-bold"
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="flex justify-center items-center mb-2">
-              <span className="text-white font-semibold px-3 py-1 rounded-full text-sm flex gap-2"> <FaFingerprint /> Our Service</span>
-            {/* <h3 className="text-white font-semibold  flex gap-2 items-center text-sm"> */}
-             
-            {/* </h3> */}
-          </div>
-          <motion.h2
-            className="text-white text-3xl font-bold"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            SMART SECURITY SERVICE FOR YOUR
-            <br />
-            LIVE SAFETY
-          </motion.h2>
-        </motion.div>
+          SMART SECURITY SERVICE FOR YOUR
+          <br />
+          LIVE SAFETY
+        </motion.h2>
+      </motion.div>
 
-        {/* Carousel Container */}
-        <div className="relative w-full flex justify-center items-center h-[400px]">
-          {/* Left Button */}
-          <button
-            onClick={handleBack}
-            className="absolute left-5 top-1/2 -translate-y-1/2 text-black bg-white rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition z-3"
-          >
-            &#8592;
-          </button>
+      {/* ✅ Swiper Carousel with Navigation */}
+      <div className="relative w-full max-w-4xl">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          loop={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          speed={1000}
+          coverflowEffect={{
+            rotate: 40,
+            stretch: 0,
+            depth: 250,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={{ clickable: true }}
+          navigation={{
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+          }}
+          modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <img src="/assets/Images/girls.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/12.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/girls.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/13.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/22.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/girls.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/girls.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/assets/Images/22.jpg" />
+          </SwiperSlide>
+        </Swiper>
 
-          {/* Right Button */}
-          <button
-            onClick={handleNext}
-            className="absolute right-5 top-1/2 -translate-y-1/2 text-black bg-white rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-100 transition z-3"
-          >
-            &#8594;
-          </button>
-
-          
-          {images.map((image, index) => (
-        <motion.img
-  key={index}
-  src={image}
-  alt={`image-${index}`}
-  className="rounded-[12px] absolute cursor-pointer"
-  style={{ width: "40%" }}
-  initial="center"
-  animate={positions[positionIndexes[index]]}
-  variants={imageVariants}
-  transition={{ duration: 0.5 }}
-  whileHover={{
-    scale: 0.7,              // zoom in slightly
-    zIndex: 5,              // bring it above others
-    boxShadow: "0px 10px 30px rgba(0,0,0,0.4)", // shadow effect
-  }}
-/>
-          ))}
-        </div>
+        {/* ✅ Custom Navigation Buttons */}
+        <button className="swiper-button-next-custom absolute left-2 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20 hover:bg-gray-500 duration-300">
+         <BiSolidLeftArrowAlt />
+        </button>
+        <button className="swiper-button-prev-custom absolute right-2 top-1/2 -translate-y-1/2 bg-gray-400 text-black w-10 h-10 rounded shadow flex items-center justify-center z-20  hover:bg-gray-500 duration-300">
+          <BiSolidRightArrowAlt />
+        </button>
       </div>
     </div>
   );
-};
-
-export default Service;
+}

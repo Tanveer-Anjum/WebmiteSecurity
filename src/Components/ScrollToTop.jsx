@@ -1,54 +1,59 @@
-import React, { useState, useEffect } from "react";
+"use client";
+import { motion, useScroll } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { BiSolidUpArrowAlt } from "react-icons/bi";
 
 const ScrollToTop = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const { scrollYProgress } = useScroll();
 
-  // Calculate scroll progress
-  const handleScroll = () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollTop = window.scrollY;
-    const progress = (scrollTop / totalHeight) * 100;
-    setScrollProgress(progress);
-  };
-
+  // Toggle button visibility when scrolling down
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const toggleVisibility = () => {
+      setIsVisible(window.scrollY > 200);
+    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const radius = 20;
+  const circumference = 2 * Math.PI * radius;
+
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-3 left-6 w-15 h-15 flex items-center justify-center rounded-circle  text-black hover:bg-blue-500 hover:text-white transition "
+      className={`fixed bottom-6 left-6 w-14 h-14 flex items-center justify-center rounded  transition
+        ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
       {/* Arrow */}
-      <span className="text-2xl">↑</span>
+      <span className="text-2xl z-10"><BiSolidUpArrowAlt /></span>
 
-      {/* Circular Progress (SVG) */}
-      <svg className="absolute w-full h-full transform -rotate-90">
+      {/* Circular Progress */}
+      <svg className="absolute w-full h-full -rotate-90">
         <circle
           cx="28"
           cy="28"
-          r="24"
+          r={radius}
           stroke="lightgray"
-          strokeWidth="4"
+          strokeWidth="2"
           fill="transparent"
         />
-        <circle
+        <motion.circle
           cx="28"
           cy="28"
-          r="24"
+          r={radius}
           stroke="blue"
-          strokeWidth="4"
+          strokeWidth="2"
           fill="transparent"
-          strokeDasharray={2 * Math.PI * 24}
-          strokeDashoffset={2 * Math.PI * 24 - (scrollProgress / 100) * (2 * Math.PI * 24)}
-          className="transition-all duration-150"
+          strokeDasharray={circumference}
+          style={{
+            strokeDashoffset: circumference,
+            pathLength: scrollYProgress, // ← Animated smoothly by Framer Motion
+          }}
         />
       </svg>
     </button>

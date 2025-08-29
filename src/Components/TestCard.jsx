@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { FaFingerprint } from "react-icons/fa";
 import { motion } from "framer-motion";
-import "../Components/Sass/TestCard.scss"; // ✅ import SCSS for ticket effect
+import "../Components/Sass/TestCard.scss"; 
 import ScrollToTop from "./ScrollToTop";
-import { BiSolidLeftArrowAlt } from "react-icons/bi";
-import { BiSolidRightArrowAlt } from "react-icons/bi";
+import { BiSolidLeftArrowAlt, BiSolidRightArrowAlt } from "react-icons/bi";
 
 export default function TestCard() {
   const testimonials = [
@@ -38,18 +37,18 @@ export default function TestCard() {
   const prev = () =>
     setCurrentIndex((currentIndex - 1 + testimonials.length) % testimonials.length);
 
-  // Animations
   const fadeUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
   };
 
   return (
-    <div className="bg-gray-300 min-h-screen flex flex-col items-center justify-center p-6 relative">
+    <div className="bg-gray-300 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-10 relative">
+      
       {/* Header */}
-      <header className="text-center mb-12 space-y-3">
+      <header className="text-center mb-10 space-y-3">
         <motion.span
-          className="text-[#15487d] font-semibold px-3 py-2 rounded-full text-sm flex justify-center items-center gap-2"
+          className="text-[#15487d] font-semibold px-3 py-2 rounded-full text-xs sm:text-sm flex justify-center items-center gap-2"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -59,7 +58,7 @@ export default function TestCard() {
         </motion.span>
 
         <motion.h1
-          className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-2"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2 leading-snug"
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -71,41 +70,46 @@ export default function TestCard() {
 
       {/* Card */}
       <motion.div
-        className="container-cards-ticket"
+        className="w-full max-w-6xl"
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.9 }}
       >
         <div className="card-ticket">
-          <div className="content-ticket grid md:grid-cols-2 gap-10 items-center">
+          <div className="content-ticket grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            
             {/* Left Text */}
-            <div className="flex flex-col space-y-6">
-              <h2 className="text-2xl font-bold text-gray-800">
+            <div className="flex flex-col space-y-4 text-center md:text-left">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
                 What Our Clients Are Saying
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                 "{current.quote}"
               </p>
-              <div className="flex items-center space-x-4 pt-2">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start md:items-center sm:space-x-4 space-y-3 sm:space-y-0 pt-2">
                 <motion.img
                   src={current.avatar}
                   alt={current.name}
-                  className="w-16 h-16 rounded-full object-cover shadow"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover shadow"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 120, duration: 0.6 }}
                   viewport={{ once: true }}
                 />
-                <div>
-                  <p className="font-semibold text-gray-900">{current.name}</p>
-                  <p className="text-gray-500">{current.title}</p>
+                <div className="text-center sm:text-left">
+                  <p className="font-semibold text-gray-900 text-sm sm:text-base">
+                    {current.name}
+                  </p>
+                  <p className="text-gray-500 text-xs sm:text-sm">
+                    {current.title}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right Image */}
-            <motion.div className="w-full h-full rounded-2xl overflow-hidden shadow-lg">
+            <motion.div className="w-full h-[200px] sm:h-[280px] md:h-[350px] rounded-2xl overflow-hidden shadow-lg">
               <motion.img
                 src={current.image}
                 alt="Client"
@@ -119,22 +123,22 @@ export default function TestCard() {
       </motion.div>
 
       {/* Navigation */}
-      <div className="flex mt-6 gap-6 justify-center items-center">
+      <div className="flex mt-6 gap-4 sm:gap-6 justify-center items-center">
         <button
           onClick={prev}
-          className="rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-200 transition duration-300"
+          className="rounded-full h-10 w-10 flex items-center justify-center shadow bg-white hover:bg-gray-200 transition duration-300"
         >
           <BiSolidLeftArrowAlt />
         </button>
         <button
           onClick={next}
-          className="rounded h-10 w-10 flex items-center justify-center shadow hover:bg-gray-200 transition duration-300"
+          className="rounded-full h-10 w-10 flex items-center justify-center shadow bg-white hover:bg-gray-200 transition duration-300"
         >
           <BiSolidRightArrowAlt />
         </button>
       </div>
 
-      <ScrollToTop /> 
+      <ScrollToTop />
     </div>
   );
 }

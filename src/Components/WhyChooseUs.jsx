@@ -8,7 +8,7 @@ import smallImg2 from "/assets/Images/13.png";
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-10 bg-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         
         {/* Left side - 3 Images */}

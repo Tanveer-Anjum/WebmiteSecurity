@@ -1,110 +1,89 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sampleImg from "/assets/Images/girls.jpg";
-import smallImg from "/assets/Images/girls.jpg";
-import { FaFingerprint } from "react-icons/fa";
+import { FaFingerprint, FaCheckCircle } from "react-icons/fa";
+
+import bigImg from "/assets/Images/girls.jpg"; 
+import smallImg1 from "/assets/Images/12.jpg"; 
+import smallImg2 from "/assets/Images/13.png"; 
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-6">
-        {/* Images with scroll-triggered animations */}
-        <motion.div
-          className="relative flex justify-center"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          //   viewport={{ once: true }}
-          transition={{ duration: 5 }}
-        >
-          <img
-            src={sampleImg}
-            alt="Why Choose Us"
-            className="rounded-xl shadow-lg w-full max-w-md"
+    <section className="py-10 bg-white">
+      <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        {/* Left side - 3 Images */}
+        <div className="grid grid-cols-2 gap-4">
+          {/* Big Image */}
+          <motion.img
+            src={bigImg}
+            alt="Main"
+            className="w-full h-[400px] object-cover rounded-2xl shadow-lg col-span-2 lg:col-span-1"
+            whileHover={{ scale: 1.05, rotateY: 5 }}
+            transition={{ type: "spring", stiffness: 100 }}
           />
 
+          {/* Two smaller stacked images */}
+          <div className="flex flex-col gap-4">
+            <motion.img
+              src={smallImg1}
+              alt="Small1"
+              className="w-full h-[190px] object-cover rounded-2xl shadow-lg"
+              whileHover={{ scale: 1.05, rotateX: 5 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            />
+            <motion.img
+              src={smallImg2}
+              alt="Small2"
+              className="w-full h-[190px] object-cover rounded-2xl shadow-lg"
+              whileHover={{ scale: 1.05, rotateY: -5 }}
+              transition={{ type: "spring", stiffness: 100 }}
+            />
+          </div>
+        </div>
 
-          <motion.div
-            className="absolute -bottom-10 -left-10 w-40 h-32 rounded-xl overflow-hidden shadow-lg"
-            initial={{ opacity: 0, x: -30, y: 20 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true }}
+        {/* Right side - Text */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6"
+        >
+          {/* Heading */}
+          <div className="flex items-center gap-2 text-sm justify-center align-items-center">
+            <FaFingerprint className="text-[#15487d]  font-semibold text-sm  " />
+            <header className="text-[#15487d] font-semibold text-sm">
+              Why Choose Us
+            </header>
+          </div>
 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <div className="overflow-hidden rounded-lg group">
-              <img
-                src={smallImg}
-                alt="24/7 Support"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-            </div>
-            <div className="absolute inset-0 bg-blue-950 bg-opacity-70 flex flex-col  items-center justify-center text-white text-center p-1">
-              <div className="flex justify-center items-center gap-2 ">
-               <FaFingerprint className="mb-2"/>
-              <h4 className="font-bold text-lg">
-              24/7 Support
-
-              </h4>
-              </div>
-              <p className="text-sm">Security & Technology Partner</p>
-            </div>
-          </motion.div>
-        </motion.div>
-
-        <div>
-          <motion.h3
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-primary fw-semibold mb-2 fs-5 flex gap-2 items-center"
-          >
-            <span className="text-[#15487d] font-semibold px-3 py-1 rounded-full text-sm flex gap-2">
-              <FaFingerprint /> Why Choose Us
-            </span>
-          </motion.h3>
-
-          <motion.h2
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-          >
+          {/* Title */}
+          <h2 className="text-3xl font-bold text-gray-900">
             WE'RE QUALIFIED & PROFESSIONAL
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="text-gray-600 mb-6"
-          >
-            Shehrity is a premier private security company based in the state of
-            Ohio, with our main office located in Columbus. We are dedicated to
-            providing top-notch security services to our clients, ensuring their
-            safety and peace of mind at all times.
-          </motion.p>
+          {/* Description */}
+          <p className="text-gray-600 leading-relaxed">
+            Shehrity is a leading security services provider dedicated to
+            ensuring safety through innovation and professionalism. With
+            experienced staff and advanced technology, we deliver unmatched
+            solutions tailored for individuals, businesses, and communities.
+          </p>
 
-          <motion.ul
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1.1 }}
-            className="space-y-3 text-lg font-medium text-gray-800"
-          >
-            {["Security Consulting", "Private Security", "Close Protections", "Guard House", "Always Honest"].map((item, idx) => (
-              <li key={idx} className="flex items-center">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#15487d] text-white mr-2">
-                  ✔️
-                </span>
+          {/* Bullet Points */}
+          <ul className="space-y-3">
+            {[
+              "Security Consulting",
+              "Private Security",
+              "Close Protections",
+              "24/7 Constant Support",
+            ].map((item, index) => (
+              <li key={index} className="flex items-center gap-3 text-gray-700">
+                <FaCheckCircle className="text-green-500" />
                 {item}
               </li>
             ))}
-          </motion.ul>
-        </div>
+          </ul>
+        </motion.div>
       </div>
     </section>
   );

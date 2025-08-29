@@ -22,8 +22,8 @@ const NavBar = () => {
 <ul className="flex space-x-8 font-medium justify-center text-center ">
   <li>
     <a
-      href="#home"
-      className="relative p-3  after:absolute after:w-0  !text-gray-500 after:h-[2px] after:bg-gray-600  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
+      href="#about"
+      className="relative py-3 after:content-[''] after:absolute after:w-0  !text-gray-500 after:h-[2px] after:bg-gray-600  after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full text-decoration-none"
     >
       Home
     </a>
@@ -57,7 +57,7 @@ const NavBar = () => {
 
 <button
   onClick={() => setShowVideo(true)}
-  className="bg-blue-800 text-white px-6 py-2 rounded-full hover:rounded-xl  hover:bg-blue-900 transition-all duration-300 rounded-pill"
+  className="bg-[#15487d] text-white px-6 py-2 rounded-full hover:rounded-xl  hover:bg-blue-900 transition-all duration-300 rounded-pill"
 >
   Switch to Digital Security
 </button>
@@ -79,7 +79,7 @@ const NavBar = () => {
         
           <button
             onClick={() => setShowVideo(false)}
-            className="absolute top-4 right-4 bg-blue-800 text-white px-4 py-2 rounded hover:bg-red-900"
+            className="absolute top-4 right-4 bg-[#15487d] text-white px-4 py-2 rounded hover:bg-red-900"
           >
             Skip to Side
           </button>

@@ -25,7 +25,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-blue-900 text-gray-300 font-sans">
+    <footer className="bg-[#15487d] text-gray-300 font-sans">
       
       {/* Top Social Bar */}
       <section className=" border-b border-white px-6 py-4 flex flex-col md:flex-row items-center justify-between">

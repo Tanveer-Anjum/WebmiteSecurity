@@ -39,11 +39,14 @@ const WhyChooseUs = () => {
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
-            <div className="absolute inset-0 bg-blue-800 bg-opacity-70 flex flex-col items-center align-items-end justify-center text-white text-center p-1">
-               <FaFingerprint />
-              <h4 className="font-bold text-lg flex items-center justify-center">
+            <div className="absolute inset-0 bg-blue-950 bg-opacity-70 flex flex-col  items-center justify-center text-white text-center p-1">
+              <div className="flex justify-center items-center gap-2 ">
+               <FaFingerprint className="mb-2"/>
+              <h4 className="font-bold text-lg">
               24/7 Support
+
               </h4>
+              </div>
               <p className="text-sm">Security & Technology Partner</p>
             </div>
           </motion.div>
@@ -57,7 +60,7 @@ const WhyChooseUs = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-primary fw-semibold mb-2 fs-5 flex gap-2 items-center"
           >
-            <span className="text-blue-800 font-semibold px-3 py-1 rounded-full text-sm flex gap-2">
+            <span className="text-[#15487d] font-semibold px-3 py-1 rounded-full text-sm flex gap-2">
               <FaFingerprint /> Why Choose Us
             </span>
           </motion.h3>
@@ -94,7 +97,7 @@ const WhyChooseUs = () => {
           >
             {["Security Consulting", "Private Security", "Close Protections", "Guard House", "Always Honest"].map((item, idx) => (
               <li key={idx} className="flex items-center">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-700 text-white mr-2">
+                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#15487d] text-white mr-2">
                   ✔️
                 </span>
                 {item}

@@ -49,7 +49,7 @@ export default function TestCard() {
       {/* Header */}
       <header className="text-center mb-12 space-y-3">
         <motion.span
-          className="text-blue-600 font-semibold px-3 py-2 rounded-full text-sm flex justify-center items-center gap-2"
+          className="text-[#15487d] font-semibold px-3 py-2 rounded-full text-sm flex justify-center items-center gap-2"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"

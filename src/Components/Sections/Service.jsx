@@ -20,7 +20,7 @@ import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper/module
 
 export default function Service() {
   return (
-    <div className="bg-blue-900 min-h-screen flex flex-col items-center justify-center py-12">
+    <div className="bg-[#15487d] min-h-screen flex flex-col items-center justify-center py-12">
       {/* ✅ Heading */}
       <motion.div
         className="text-center mb-10"

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // for hamburger & close icons
 import logo from "/assets/Images/Asset5.png";
 import NewsTicker from "./NewsUpdate/NewsTicker";
@@ -9,8 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      {/* News Ticker on top */}
-      <NewsTicker />
+   
 
       {/* Navbar */}
       <nav className="top-0 bg-white shadow-md flex items-center justify-between px-6 py-3 z-40">
@@ -26,15 +26,15 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 font-medium  !text-decoration-none">
+        <ul className="hidden md:flex space-x-8 font-medium !text-decoration-none">
           {["Home", "About", "Services", "Contact"].map((item, idx) => (
             <li key={idx}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="relative py-3 after:content-[''] after:absolute after:w-0 !text-gray-500 after:h-[2px] after:bg-gray-600 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full !no-underline  !text-decoration-none "
+              <Link
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className="relative py-3 after:content-[''] after:absolute after:w-0 text-gray-500 after:h-[2px] after:bg-gray-600 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full !no-underline"
               >
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -58,9 +58,8 @@ const NavBar = () => {
 
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Close button */}
         <button

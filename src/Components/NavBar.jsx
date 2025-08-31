@@ -70,19 +70,20 @@ const NavBar = () => {
         </button>
 
         {/* Links */}
-        <ul className="flex flex-col space-y-6 mt-16 px-6 font-medium">
-          {["Home", "About", "Services", "Contact"].map((item, idx) => (
-            <li key={idx}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="block text-gray-700 hover:text-[#15487d] transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
+     <ul className="flex flex-col space-y-6 mt-16 px-6 font-medium">
+  {["Home", "About", "Services", "Contact"].map((item, idx) => (
+    <li key={idx}>
+      <Link
+        to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+        className="block text-gray-700 hover:text-[#15487d] transition"
+        onClick={() => setMenuOpen(false)} // close menu after click
+      >
+        {item}
+      </Link>
+    </li>
+  ))}
+</ul>
+
 
         {/* Mobile Button */}
         <div className="mt-8 px-6">

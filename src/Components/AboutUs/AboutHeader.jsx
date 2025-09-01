@@ -7,7 +7,6 @@ import CardAbout from './CardAbout';
 import StatsSection from './StatsSection';
 import ContactUs from './ContactUs';
 import TeamCard from './TeamSection';
-import TimelineSection from './TimelineSection';
 
 
 

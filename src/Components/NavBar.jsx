@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";  
 import { FaBars, FaTimes } from "react-icons/fa"; // for hamburger & close icons
 import logo from "/assets/Images/Asset5.png";
 import NewsTicker from "./NewsUpdate/NewsTicker";
@@ -9,8 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      {/* News Ticker on top */}
-      <NewsTicker />
+
 
       {/* Navbar */}
       <nav className="top-0 bg-white shadow-md flex items-center justify-between px-6 py-3 z-40">
@@ -29,12 +29,12 @@ const NavBar = () => {
         <ul className="hidden md:flex space-x-8 font-medium  !text-decoration-none">
           {["Home", "About", "Services", "Contact"].map((item, idx) => (
             <li key={idx}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="relative py-3 after:content-[''] after:absolute after:w-0 !text-gray-500 after:h-[2px] after:bg-gray-600 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full !no-underline  !text-decoration-none "
+              <Link
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className="relative py-3 after:content-[''] after:absolute after:w-0 text-gray-500 after:h-[2px] after:bg-gray-600 after:left-0 after:bottom-1 after:transition-all after:duration-300 hover:after:w-full !no-underline"
               >
                 {item}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -74,14 +74,14 @@ const NavBar = () => {
         <ul className="flex flex-col space-y-6 mt-16 px-6 font-medium">
           {["Home", "About", "Services", "Contact"].map((item, idx) => (
             <li key={idx}>
-              <a
-                href={`#${item.toLowerCase()}`}
-                className="block text-gray-700 hover:text-[#15487d] transition"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            </li>
+      <Link
+        to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+        className="block text-gray-700 hover:text-[#15487d] transition"
+        onClick={() => setMenuOpen(false)} // close menu after click
+      >
+        {item}
+      </Link>
+    </li>
           ))}
         </ul>
 

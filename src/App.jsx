@@ -8,6 +8,10 @@ import TestCard from "./Components/TestCard";
 import Footer from "./Components/Footer";
 import AboutHeader from "./Components/AboutUs/AboutHeader";
 import NewsTickers from "./Components/AboutUs/NewsTickers";   // about ticker
+import ServiceSlider from "./Components/Services/ServiceSlider";
+import PhyscialSlider from "./Components/PhysicalSecurity/PhyscialSlider";
+import DigitalSlider from "./Components/DigitalSecurity/DigitalSlider";
+
 
 // ✅ Component to switch ticker based on route
 function TickerSwitcher() {
@@ -54,7 +58,35 @@ function App() {
               <Footer />
             </>
           }
+          
         />
+        <Route
+          path='/services'
+          element ={
+            <>
+              <ServiceSlider />
+              <Footer />
+            </>
+          }
+       />
+       <Route
+       path='/physical-security'
+       element ={
+        <>
+        <PhyscialSlider/>
+        <Footer />
+        </>
+       }
+      />
+        <Route
+       path='/digital-security'
+       element ={
+        <>
+        <DigitalSlider/>
+        <Footer />
+        </>
+       }
+      />
       </Routes>
     </Router>
   );

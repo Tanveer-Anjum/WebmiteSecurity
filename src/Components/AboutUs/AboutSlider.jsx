@@ -16,7 +16,7 @@ const AboutSlider = () => {
   ];
 
   return (
-    <div className="relative w-full h-[500px] text-5xl">
+    <div className="relative w-full h-[500px] text-5xl z-index-0">
       {/* Carousel */}
       <Carousel
         activeIndex={index}
@@ -29,7 +29,7 @@ const AboutSlider = () => {
         {slides.map((slide, i) => (
           <Carousel.Item key={i}>
             <img
-              className="d-block w-100 h-[500px] object-cover"
+              className="d-block w-100 h-[500px] object-cover z-index-0"
               src={slide.src}
               alt={slide.alt}
             />
@@ -38,7 +38,7 @@ const AboutSlider = () => {
       </Carousel>
 
       {/* Centered Text */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center z-index-10">
         <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">
           About Us
         </h1>

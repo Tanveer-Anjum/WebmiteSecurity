@@ -2,14 +2,14 @@ import React from "react";
 
 const NewsTickers = () => {
   const newsItems = [
-    "🔒 New AI-Powered Threat Detection System Launched",
-    "🏆 Awarded Best Security Company 2024",
-    "🚨 24/7 Emergency Response Available",
-    "🛡️ Advanced Cybersecurity Solutions Now Available",
-    "📱 Mobile Security App Downloaded 100K+ Times",
-    "🏢 New Branch Office Opening in Downtown",
-    "⚡ Lightning-Fast Response Time Under 5 Minutes",
-    "🔐 Zero Security Breaches for 3 Consecutive Years",
+    "New AI-Powered Threat Detection System Launched",
+    "Awarded Best Security Company 2024",
+    "24/7 Emergency Response Available",
+    " Advanced Cybersecurity Solutions Now Available",
+    " Mobile Security App Downloaded 100K+ Times",
+    " New Branch Office Opening in Downtown",
+    " Lightning-Fast Response Time Under 5 Minutes",
+    " Zero Security Breaches for 3 Consecutive Years",
   ];
 
   return (

@@ -47,11 +47,11 @@ import ServicesSection from "./ServicesSection";
 
         {/* Overlay Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Our Services
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+           Physical Security Services
           </h1>
           <p className="text-lg md:text-xl max-w-3xl">
-            Explore our services tailored for both physical and digital worlds.
+          Reliable protection for your people, property, and assets.
           </p>
         </div>
 
@@ -97,14 +97,14 @@ import ServicesSection from "./ServicesSection";
               onClick={() => setCurrent(index)}
               className={`w-3 h-3 rounded-full border transition ${
                 current === index
-                  ? "bg-blue-700 border-blue-700"
+                  ? "bg-[#15487d] border-blue-700"
                   : "border-gray-300 bg-white/50"
               }`}
             />
           ))}
         </div>
       </div>
-  <section className="w-full bg-blue-800 text-white py-16 flex flex-col items-center text-center px-6">
+  <section className="w-full bg-[#15487d] text-white py-16 flex flex-col items-center text-center px-6">
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -40 }}

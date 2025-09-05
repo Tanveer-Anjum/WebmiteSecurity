@@ -11,6 +11,8 @@ import NewsTickers from "./Components/AboutUs/NewsTickers";   // about ticker
 import ServiceSlider from "./Components/Services/ServiceSlider";
 import PhyscialSlider from "./Components/PhysicalSecurity/PhyscialSlider";
 import DigitalSlider from "./Components/DigitalSecurity/DigitalSlider";
+import ContactForm from "./Components/ContactPage/ContactForm";
+
 
 
 // ✅ Component to switch ticker based on route
@@ -31,11 +33,11 @@ function App() {
          <TickerSwitcher />
       <NavBar />
 
-      {/* ✅ ticker always below NavBar */}
+    
    
 
       <Routes>
-        {/* Home Page */}
+      
         <Route
           path="/"
           element={
@@ -49,7 +51,7 @@ function App() {
           }
         />
 
-        {/* About Page */}
+     
         <Route
           path="/about"
           element={
@@ -83,6 +85,15 @@ function App() {
        element ={
         <>
         <DigitalSlider/>
+        <Footer />
+        </>
+       }
+      />
+       <Route
+       path='/contact'
+       element ={
+        <>
+        <ContactForm/>
         <Footer />
         </>
        }

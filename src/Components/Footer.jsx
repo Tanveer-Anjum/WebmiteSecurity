@@ -25,17 +25,17 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#15487d] text-gray-300 font-sans">
+    <footer className="bg-[#15487d] text-gray-300 font-sans ">
       
       {/* Top Social Bar */}
-      <section className=" border-b border-white px-6 py-4 flex flex-col md:flex-row items-center justify-between">
-          <div>
+      <section className=" px-6  flex flex-col md:flex-row items-center justify-end">
+          {/* <div>
             <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-20 mb-4" />
             <p className="text-md leading-relaxed hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1">
               Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
             </p>
-          </div>
-        <div className="flex space-x-5 px-12 py-4">
+          </div> */}
+        <div className="flex space-x-5 px-12 py-4 align-items-end">
       {socialLinks.map((link) => (
         <div key={link.name} className="relative group">
           {/* Tooltip */}
@@ -67,7 +67,12 @@ export default function Footer() {
       {/* Main Footer Content */}
       <div className="container mx-auto px-12 py-4">
         <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-10">
-          
+            <div>
+            <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-20 mb-4" />
+            <p className="text-md leading-relaxed hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+              Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
+            </p>
+          </div>
           {/* Column 2: Services */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1">

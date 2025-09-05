@@ -104,7 +104,7 @@ const ServiceSlider = () => {
       </div>
 
       {/* Services Section */}
-      <div className="grid md:grid-cols-2 gap-6 p-6 bg-gray-50">
+      <div className="grid md:grid-cols-2 gap-6 p-6 bg-gray-50 py-24">
         {/* Physical Security */}
         <div className="bg-white shadow-md rounded-lg p-6 text-center">
           <h3 className="text-xl font-bold text-blue-800 mb-2">
@@ -117,7 +117,7 @@ const ServiceSlider = () => {
             whileHover={{ scale: 1.1, boxShadow: "0px 0px 12px rgba(37,99,235,0.6)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/physical-security")} // ✅ redirect
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold transition"
+            className="px-6 py-3 bg-[#15487d] text-white rounded-lg font-semibold transition"
           >
             Learn More
           </motion.button>

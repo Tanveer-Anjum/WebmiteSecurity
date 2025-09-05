@@ -13,7 +13,7 @@ const NewsTickers = () => {
   ];
 
   return (
-    <div className="bg-blue-900 py-2 overflow-hidden relative">
+    <div className="bg-[#15487d] py-2 overflow-hidden relative">
       <div className="ticker-wrapper">
         <div className="ticker-content">
           {/* First set */}

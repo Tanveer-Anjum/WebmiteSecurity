@@ -89,7 +89,7 @@ export default function TeamSection() {
                   {/* Social Icons Overlay */}
                   <div
                     className={`absolute inset-0 flex items-center justify-center gap-4 transition-all duration-300 rounded-t-lg ${
-                      hoveredMember === member.id ? "opacity-100 bg-blue-900/90" : "opacity-0"
+                      hoveredMember === member.id ? "opacity-100 bg-[#15487d]" : "opacity-0"
                     }`}
                   >
                     <a

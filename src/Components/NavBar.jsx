@@ -162,7 +162,7 @@ const NavBar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-medium">
-          {["  Home","About", "Services", "Contact","Career"].map((item, idx) => (
+          {["Home","About", "Services", "Contact","Career"].map((item, idx) => (
             <li key={idx}>
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -209,8 +209,8 @@ const NavBar = () => {
         </button>
 
         {/* Links */}
-        <ul className="flex flex-col space-y-6 mt-16 px-6 font-medium">
-          {["Home", "About", "Services", "Contact"].map((item, idx) => (
+        <ul className="flex flex-col mt-16 px-6 font-medium gap-4">
+          {["Home", "About", "Services", "Contact","Career"].map((item, idx) => (
             <li key={idx}>
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}

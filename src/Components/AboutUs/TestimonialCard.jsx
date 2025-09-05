@@ -4,8 +4,8 @@ import { Star } from 'lucide-react';
 const TestimonialCard = ({ testimonial, author, rating }) => {
   return (
     <>
-    <div >
-    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className='flex justify-center '>
+    <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ">
       <div className="flex mb-4">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />

@@ -46,7 +46,7 @@ const CareerPage = () => {
 
             <div className="space-y-4">
           
-              <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+              <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg shadow-sm text-sm">
                 <p>
                 At Shehrity, we believe that our people are our greatest asset. We are a dynamic and
                  innovative company at the forefront of software development and artificial intelligence, and we are always looking for talented, driven individuals to join our team. If you're passionate about technology and want to be part of a company that values creativity,
@@ -56,7 +56,7 @@ const CareerPage = () => {
               </div>
 
                <h2 className="text-3xl font-bold mb-4">How to Apply</h2>
-              <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg shadow-sm">
+              <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-lg shadow-sm text-sm">
               
                 <p>
                     Applying is simple! Explore our open positions, upload your resume, and share why you’d be a great fit for Shehrity Security Services. We carefully review all applications and will reach out if your skills and experience align with our needs. At Shehrity, your career is more than just a job—it’s a path to growth, excellence, and making a real impact. Join us and be part of a team dedicated to security, 

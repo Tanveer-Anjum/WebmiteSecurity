@@ -24,7 +24,7 @@ export default function Service() {
         transition={{ duration: 1 }}
       >
         <div className="flex justify-center items-center mb-2">
-          <span className="text-white font-semibold px-3 py-1 rounded-full text-xs sm:text-sm flex gap-2">
+          <span className="text-white font-bold px-3 py-1 rounded-full text-2xl sm:text-3xl md:text-4xl lg:text-5xl flex gap-2">
             <FaFingerprint /> Our Service
           </span>
         </div>

@@ -12,6 +12,9 @@ import ServiceSlider from "./Components/Services/ServiceSlider";
 import PhyscialSlider from "./Components/PhysicalSecurity/PhyscialSlider";
 import DigitalSlider from "./Components/DigitalSecurity/DigitalSlider";
 import ContactForm from "./Components/ContactPage/ContactForm";
+import CareerPage from "./Components/Career/Careerpage";
+
+
 
 
 
@@ -94,6 +97,15 @@ function App() {
        element ={
         <>
         <ContactForm/>
+        <Footer />
+        </>
+       }
+      />
+         <Route
+       path='/career'
+       element ={
+        <>
+        <CareerPage/>
         <Footer />
         </>
        }

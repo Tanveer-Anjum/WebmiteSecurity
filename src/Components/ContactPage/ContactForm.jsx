@@ -21,7 +21,7 @@ const ContactForm = () => {
         </motion.div>
 
         {/* Centered Text */}
-        <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-black drop-shadow-lg">
+        <h1 className="relative text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black drop-shadow-lg">
           Contact Us
         </h1>
       </div>

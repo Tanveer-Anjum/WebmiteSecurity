@@ -121,7 +121,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white">
-        <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center text-sm">
+        <div className="container mx-auto px-6 py-2 flex flex-col md:flex-row justify-between items-center text-sm">
           <p className="hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1">
             Copyright &copy; {new Date().getFullYear()} Shehrity. All Rights Reserved
           </p>

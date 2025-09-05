@@ -146,7 +146,7 @@ const NavBar = () => {
     <>
       {/* Navbar */}
       <nav
-        className="top-0 shadow-md flex items-center justify-between px-6 py-3 z-40 
+        className="top-0 shadow-md flex items-center justify-between px-6 py-2 z-40 
          bg-white" 
       >
         {/* Logo */}
@@ -161,8 +161,8 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 font-medium">
-          {["Home", "About", "Services", "Contact"].map((item, idx) => (
+        <ul className="hidden md:flex gap-8 font-medium">
+          {["  Home","About", "Services", "Contact","Career"].map((item, idx) => (
             <li key={idx}>
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -179,7 +179,7 @@ const NavBar = () => {
         {/* Desktop Button */}
         <button
           onClick={() => setShowVideo(true)}
-          className={`hidden md:block px-6 py-2.5 text-white font-medium rounded-full transition-all duration-300
+          className={`hidden md:block px-6 py-2.5 text-white font-medium rounded transition-all duration-300 
            ${isDigital ? "bg-[#6B4226] hover:bg-[#4E2D1A]" : "bg-[#15487d] hover:bg-blue-900"}`}
         >
           Switch to Digital Security
@@ -214,7 +214,7 @@ const NavBar = () => {
             <li key={idx}>
               <Link
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="block text-gray-700 hover:text-[#15487d] transition"
+                className="block text-gray-950 hover:text-[#15487d] transition"
                 onClick={() => setMenuOpen(false)}
               >
                 {item}

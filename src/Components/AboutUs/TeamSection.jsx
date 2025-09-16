@@ -62,10 +62,13 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h3 className="text-lg md:text-xl !font-bold !text-[#15487d] mb-2 drop-shadow-lg tracking-wide">
+          <h3 className="text-lg md:text-xl !font-bold !text-[#15487d] mb-2 drop-shadow-lg tracking-wide"
+           style={{ fontFamily: ' Arial, sans-serif' }}>
             Our Team
           </h3>
-          <h2 className="text-3xl md:text-5xl !font-bold !text-[#15487d] mb-4 drop-shadow-2xl leading-snug">
+          <h2 className="text-3xl md:text-5xl !font-bold text-black mb-4 drop-shadow-2xl leading-snug"
+           style={{ fontFamily: 'Arial Narrow, Arial, sans-serif' }}
+          >
             Meet With Our Expert Team
           </h2>
         </div>
@@ -122,7 +125,7 @@ export default function TeamSection() {
 
         {/* Name & Role */}
         <div className="p-4 text-center flex flex-col justify-center">
-          <h3 className="text-lg font-semibold mb-1 text-[#15487d]">
+          <h3 className="!text-xl !font-bold mb-1 text-[#15487d]">
             {member.name}
           </h3>
           <p className="text-xs font-medium text-[#15487d]">

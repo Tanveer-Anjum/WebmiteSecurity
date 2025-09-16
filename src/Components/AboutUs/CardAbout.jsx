@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Award, Users } from "lucide-react";
-import background from "../assets/bg2.jpg"; // ✅ import background image
+
 import ourservice from "../assets/ourservices.jpg";
 
 export default function CardAbout() {
   return (
     <section
-          className="py-8 px-4 sm:px-6 lg:px-12 relative"
+          className="py-24 px-4 sm:px-6 lg:px-12 relative h-[550px]"
           style={{
             backgroundImage: `url(${ourservice})`,
             backgroundSize: "cover",
@@ -16,7 +16,7 @@ export default function CardAbout() {
           }}
         >
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-blue-900/20"></div>
+          <div className="absolute inset-0 bg-blue-900/20 "></div>
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 z-10">
         {/* Card 1 */}
@@ -29,17 +29,17 @@ export default function CardAbout() {
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
-            <Shield className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+            <Shield className="w-8 h-8 text-[#15487d] group-hover:text-white transition-colors duration-300" />
           </div>
           <h3
-            className="text-2xl font-bold text-gray-900 mb-4"
-            style={{ fontFamily: "Arial Narrow, Arial, sans-serif" }}
+            className="!text-xl !font-bold text-gray-900 mb-4"
+            style={{ fontFamily: "Arial, sans-serif" }}
           >
             COMPANY
           </h3>
           <p
             className="text-gray-600 leading-relaxed"
-            style={{ fontFamily: "Arial Narrow, Arial, sans-serif" }}
+            style={{ fontFamily: "Arial Narrow,  Arial, sans-serif" }}
           >
             Trusted security solutions from a comprehensive security business.
             Our experienced team caters to industrial, commercial, and armed
@@ -58,10 +58,14 @@ export default function CardAbout() {
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
-            <Award className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+            <Award className="w-8 h-8 text-[#15487d] group-hover:text-white transition-colors duration-300" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">LICENSED</h3>
-          <p className="text-gray-600 leading-relaxed">
+          <h3 className="!text-xl !font-bold text-gray-900 mb-4"
+              style={{ fontFamily: " Arial, sans-serif" }}
+          >LICENSED</h3>
+          <p className="text-gray-600 leading-relaxed"
+              style={{ fontFamily: "Arial Narrow,Arial, sans-serif" }}
+          >
             Shehrity is a trusted security guard company in Australia. Our team
             of experienced professionals works to reduce, neutralize, and ensure
             your peace of mind. We provide comprehensive security solutions and
@@ -79,10 +83,13 @@ export default function CardAbout() {
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
-            <Users className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+            <Users className="w-8 h-8 text-[#15487d] group-hover:text-white transition-colors duration-300" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">TOP NOTCH</h3>
-          <p className="text-gray-600 leading-relaxed">
+          <h3 className="!text-xl !font-bold text-gray-900 mb-4"
+            style={{ fontFamily: " Arial, sans-serif" }}>TOP NOTCH</h3>
+          <p className="text-gray-600 leading-relaxed"
+          style={{ fontFamily: "Arial Narrow,Arial, sans-serif" }}
+          >
             Quality assures the utmost client security solutions. Our team
             specializes in providing cutting-edge technology and expert team
             protect common commercial and retail areas from theft, vandalism,

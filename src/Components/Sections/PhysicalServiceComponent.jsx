@@ -13,7 +13,11 @@ import "./Styles.css";
 import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper/modules";
 import ourservice from "../assets/ourservices.jpg";
 
-export default function Service() {
+
+
+
+
+export default function Service({isDigitalSecurityActive}) {
   const services = [
     { img: "/assets/Images/girls.jpg", title: "Guard Services", desc: "Professional guards ensuring your safety 24/7." },
     { img: "/assets/Images/12.jpg", title: "CCTV Monitoring", desc: "Smart surveillance with real-time monitoring." },
@@ -47,13 +51,13 @@ export default function Service() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center align-center">
-            <span className="!text-[#15487d] !font-bold px-2 py-1 rounded-full !text-lg sm:text-lg flex gap-1 
+            <span className="!text-[#15487d] !font-bold px-2 py-1 rounded-full !text-xl  flex gap-1 
             "    style={{ fontFamily: "Arial, sans-serif" }}>
               Our Services
             </span>
           </div>
           <motion.h2
-            className="!text-[#15487d] text-2xl sm:text-xl md:text-2xl !font-bold leading-tight]"
+            className={`!text-xl sm:!text-2xl md:!text-2xl !font-bold leading-tight ${ isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"}`}
              style={{ fontFamily: "Arial, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

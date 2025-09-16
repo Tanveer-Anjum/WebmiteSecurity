@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheckCircle } from "react-icons/fa";
+
 
 import bigImg from "/assets/Images/girls.jpg";
 import smallImg1 from "/assets/Images/12.jpg";
@@ -56,7 +56,7 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
           {/* Heading */}
           <div className="flex items-center gap-2 justify-center">
             <header
-              className={`font-bold text-sm sm:text-base ${
+              className={`!font-bold text-xl ${
                 isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
               }`}
               style={{ fontFamily: "Arial, sans-serif" }}
@@ -67,7 +67,7 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
 
           {/* Title */}
           <h2
-            className={`text-2xl sm:text-3xl md:text-4xl !font-bold leading-snug justify-center text-center ${
+            className={`!text-lg sm:!text-xl md:!text-xl !font-bold  justify-center text-center ${
               isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"
             }`}
             style={{ fontFamily: "Arial, sans-serif" }}
@@ -98,7 +98,7 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
                 key={index}
                 className="flex items-center gap-3 text-gray-700 justify-center lg:justify-start"
               >
-                <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                
                 {item}
               </li>
             ))}

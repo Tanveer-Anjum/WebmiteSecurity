@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, Shield, Clock, Award } from "lucide-react";
 import CountUp from "react-countup";
 
-const StatsSection = () => {
+const StatsSection = ({ isDigitalSecurityActive }) => {
   const stats = [
     { number: 40, suffix: "+", label: "Years Experience", icon: Calendar },
     { number: 500, suffix: "+", label: "Clients Protected", icon: Shield },
@@ -14,10 +14,7 @@ const StatsSection = () => {
   return (
     <div
       className="grid md:grid-cols-4 gap-8 mb-20 py-16 bg-gradient-to-b from-gray-50/80 to-gray-100/80"
-      style={{
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      style={{ backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {stats.map((stat, index) => (
         <motion.div
@@ -30,14 +27,31 @@ const StatsSection = () => {
         >
           {/* Icon Circle */}
           <div
-            className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-colors duration-300 transform group-hover:scale-110"
+            className={`w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 
+                        transition-all duration-300 transform group-hover:scale-110 
+                        ${
+                          isDigitalSecurityActive
+                            ? "bg-yellow-100 !group-hover:bg-[#8B4513]" // brown for digital mode
+                            : "bg-blue-100 group-hover:bg-[#15487d]" // blue for physical mode
+                        }`}
             style={{ fontFamily: "Arial Narrow, Arial, sans-serif" }}
           >
-            <stat.icon className="w-10 h-10 text-[#15487d]" />
+            <stat.icon
+              className={`w-10 h-10 transition-colors duration-300 
+                ${
+                  isDigitalSecurityActive
+                    ? "!text-[#8B4513] group-hover:text-white"
+                    : "text-[#15487d] group-hover:text-white"
+                }`}
+            />
           </div>
 
           {/* Number Animation */}
-          <div className="text-3xl font-bold text-[#15487d] mb-2 drop-shadow-md">
+          <div
+            className={`text-3xl font-bold mb-2 drop-shadow-md ${
+              isDigitalSecurityActive ? "text-[#8B4513]" : "text-[#15487d]"
+            }`}
+          >
             <CountUp
               start={0}
               end={stat.number}
@@ -49,7 +63,13 @@ const StatsSection = () => {
           </div>
 
           {/* Label */}
-          <div className="text-[#15487d] font-medium tracking-wide">{stat.label}</div>
+          <div
+            className={`font-medium tracking-wide ${
+              isDigitalSecurityActive ? "text-[#8B4513]" : "text-[#15487d]"
+            }`}
+          >
+            {stat.label}
+          </div>
         </motion.div>
       ))}
     </div>

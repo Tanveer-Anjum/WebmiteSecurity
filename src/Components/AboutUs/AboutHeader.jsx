@@ -89,6 +89,7 @@ const AboutHeader = () => {
           <motion.p 
             className="text-xl lg:text-2xl leading-relaxed max-w-4xl mx-auto text-center font-light tracking-wide text-black drop-shadow-md"
             variants={childVariants}
+                 style={{ fontFamily: '"Arial Narrow", Arial, sans-serif' }}
           >
             We are a premier security solutions provider, committed to delivering unparalleled safety and peace of mind. With decades of expertise, we specialize in cutting-edge cybersecurity, physical security, and rapid-response emergency services.
           </motion.p>
@@ -114,7 +115,7 @@ const AboutHeader = () => {
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
               >
                 <motion.div
-                  className="inline-flex items-center bg-blue-600/90 text-white px-5 py-2 rounded-full text-sm font-semibold tracking-tight drop-shadow-lg"
+                  className="inline-flex items-center bg-[#15487d] text-white px-5 py-2 rounded-full text-sm font-semibold tracking-tight drop-shadow-lg"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                   variants={childVariants}
@@ -123,9 +124,10 @@ const AboutHeader = () => {
                   Over 40 Years of Excellence
                 </motion.div>
                 <motion.h1 
-                  className="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-black drop-shadow-lg"
+                  className="!text-3xl lg:text-4xl !font-bold  tracking-tight !text-[#15487d] drop-shadow-lg"
                   variants={childVariants}
                   transition={{ duration: 0.7, ease: "easeOut" }}
+                   style={{ fontFamily: "Arial, sans-serif" }}
                 >
                   Welcome to Shehrity
                 </motion.h1>
@@ -133,6 +135,7 @@ const AboutHeader = () => {
                   className="text-lg lg:text-xl leading-relaxed font-light tracking-wide text-black drop-shadow-md"
                   variants={childVariants}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    style={{ fontFamily: '"Arial Narrow", Arial, sans-serif' }}
                 >
                   Since 1980, Shehrity has been a trusted name in security, serving businesses with unmatched expertise. As one of the nation’s leading security firms, our highly trained professionals deliver top-tier services tailored to your needs.
                 </motion.p>
@@ -229,34 +232,7 @@ const AboutHeader = () => {
             transition={{ duration: 0.6 }}
           >
           </motion.h2>
-           {/* <div className="max-w-3xl mx-auto relative"> 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                className="relative h-56"
-                initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -20 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <TestimonialCard {...testimonials[currentTestimonial]} />
-              </motion.div>
-            </AnimatePresence>
-            <div className="flex justify-center mt-8 space-x-3">
-              {testimonials.map((_, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial ? "bg-blue-600 scale-125" : "bg-gray-400"
-                  } hover:bg-blue-500`}
-                  whileHover={{ scale: 1.3 }}
-                  whileTap={{ scale: 0.9 }}
-                  variants={childVariants}
-                />
-              ))}
-            </div>
-          </div> */}
+        
         </motion.section>
 
         {/* Team Section */}
@@ -264,17 +240,7 @@ const AboutHeader = () => {
           <TeamCard />
         </div>
 
-        {/* Contact Section - Uncommented and enhanced with scroll animation */}
-       {/* <motion.section
-          className="bg-gray-100/90 rounded-2xl p-8 lg:p-12 mx-4 lg:mx-12 mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.3 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-        >
-          <ContactUs />
-        </motion.section>*/}
+       
       </div> 
 
       {/* Parallax effect on background for extra smoothness */}

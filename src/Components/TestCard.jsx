@@ -52,7 +52,7 @@ export default function TestCard({ isDigitalSecurityActive }) {
     <div className="py-12 px-4" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       
       {/* Header */}
-      <header className="text-center mb-10 space-y-3 font-bold text-sm sm:text-base">
+      <header className="text-center mb-10 space-y-3 !font-bold !text-xl sm:text-base">
         <motion.span
           className={`!font-bold px-3 py-2 rounded-full flex justify-center items-center gap-2 ${
             isDigitalSecurityActive ? "!text-[#702829]" : "!text-[#15487d]"
@@ -67,9 +67,9 @@ export default function TestCard({ isDigitalSecurityActive }) {
         </motion.span>
 
         <motion.h2
-          className={`text-2xl sm:text-3xl md:text-4xl !font-bold leading-snug justify-center text-center ${
-            isDigitalSecurityActive ? "!text-black" : "!text-[#15487d]"
-          }`}
+          className="!text-2xl sm:text-2xl md:text-3xl !font-bold justify-center text-center 
+          !text-black"
+       
           style={{ fontFamily: "Arial, sans-serif" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

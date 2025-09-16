@@ -32,7 +32,9 @@ const AboutSlider = () => {
       About Us
     </h1>
 
-    <p className="mt-4 max-w-2xl mx-auto  !text-black text-sm sm:text-base md:text-lg !font-bold drop-shadow-md">
+    <p className="mt-4 max-w-2xl mx-auto  !text-black text-sm sm:text-base md:text-lg  drop-shadow-md leading-relaxed"
+      style={{ fontFamily: '"Arial Narrow", Arial, sans-serif' }}
+    >
       We are dedicated to providing innovative solutions that blend technology,
       creativity, and professionalism. Our mission is to build digital
       experiences that truly inspire.

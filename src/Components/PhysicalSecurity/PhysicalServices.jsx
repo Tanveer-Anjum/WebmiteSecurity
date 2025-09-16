@@ -132,7 +132,7 @@ const PhysicalServices = () => {
               backgroundAttachment: 'fixed',
             }}>
        <motion.h1
-                  className="text-2xl md:text-3xl font-bold text-black mb-2 justify-center text-center"
+                  className="text-2xl md:text-3xl !font-bold !text-[#15487d] mb-2 justify-center text-center"
                   style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
                  
                 >
@@ -140,7 +140,7 @@ const PhysicalServices = () => {
                 </motion.h1> 
                 <motion.p
                   className="text-sm text-black max-w-2xl mx-auto justify-center text-center"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}
+                   style={{ fontFamily: "Arial, sans-serif" }}
                   
                 >
                   Enterprise-grade cybersecurity solutions designed to protect your
@@ -159,7 +159,7 @@ const PhysicalServices = () => {
 
       {/* 🔹 Modal */}
       {showApplyModal && selectedService && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+        <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg max-w-md">
             <h2 className="text-lg font-bold mb-2">
               Apply for {selectedService.title}

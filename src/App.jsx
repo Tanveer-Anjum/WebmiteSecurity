@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import DigitalServices from "./Components/Sections/DigitalServicesComponent";
 import DigitalHeroSection from "./Components/DigitalHeroSection";
@@ -15,19 +15,17 @@ import PhyscialSlider from "./Components/PhysicalSecurity/PhyscialSlider";
 import DigitalSlider from "./Components/DigitalSecurity/DigitalSlider";
 import ContactForm from "./Components/ContactPage/ContactForm";
 import CareerPage from "./Components/Career/Careerpage";
+import SecuritySwitchButton from "./Components/SecuritySwitchButton/SwitchButton";
 
 
-
-
-
-// ✅ Component to switch ticker based on route
-function TickerSwitcher({ showVideo }) {
-  const location = useLocation();
-
-  
-
-  // default: home ticker
-  return <NewsTicker showVideo={showVideo} />;
+// ✅ Component to render ticker
+function TickerSwitcher({ showVideo, isDigitalSecurityActive }) {
+  return (
+    <NewsTicker
+      showVideo={showVideo}
+      isDigitalSecurityActive={isDigitalSecurityActive}
+    />
+  );
 }
 
 function App() {
@@ -37,30 +35,53 @@ function App() {
   const handleSecuritySwitch = () => {
     setIsDigitalSecurityActive(prevState => !prevState);
   };
+
   return (
     <Router>
-         <TickerSwitcher showVideo={showVideo} />
-      <NavBar showVideo={showVideo} setShowVideo={setShowVideo} isDigitalSecurityActive={isDigitalSecurityActive} handleSecuritySwitch={handleSecuritySwitch} />
+      {/* ✅ Pass state so ticker background updates */}
+      <TickerSwitcher
+        showVideo={showVideo}
+        isDigitalSecurityActive={isDigitalSecurityActive}
+      />
 
-    
-   
+      <NavBar
+        showVideo={showVideo}
+        setShowVideo={setShowVideo}
+        isDigitalSecurityActive={isDigitalSecurityActive}
+        handleSecuritySwitch={handleSecuritySwitch}
+      />
 
       <Routes>
-      
         <Route
           path="/"
           element={
             <>
-              {isDigitalSecurityActive ? <DigitalHeroSection /> : <HeroSection />}
-              <WhyChooseUs />
-              {isDigitalSecurityActive ? <DigitalServices /> : <PhysicalService />}
-              <TestCard />
+              {isDigitalSecurityActive
+                ? <DigitalHeroSection isDigitalSecurityActive={isDigitalSecurityActive} />
+                : <HeroSection />
+              }
+
+              {/* ✅ Switch Button Overlapping Slider */}
+              <div className="flex justify-center -mt-5 relative z-20">
+                <SecuritySwitchButton
+                  handleSecuritySwitch={handleSecuritySwitch}
+                  isDigitalSecurityActive={isDigitalSecurityActive}
+                />
+              </div>
+
+              <WhyChooseUs isDigitalSecurityActive={isDigitalSecurityActive} />
+
+              {isDigitalSecurityActive
+                ? <DigitalServices isDigitalSecurityActive={isDigitalSecurityActive} />
+                : <PhysicalService isDigitalSecurityActive={isDigitalSecurityActive} />}
+
+                
+              <TestCard isDigitalSecurityActive={isDigitalSecurityActive}/>
               <Footer />
             </>
           }
         />
 
-     
         <Route
           path="/about"
           element={
@@ -69,53 +90,57 @@ function App() {
               <Footer />
             </div>
           }
-          
         />
+
         <Route
-          path='/services'
-          element ={
+          path="/services"
+          element={
             <div className="container mx-auto overflow-hidden flex justify-center pt-24">
               <ServiceSlider />
               <Footer />
             </div>
           }
-       />
-       <Route
-       path='/physical-security'
-       element ={
-        <div className="pt-24">
-        <PhyscialSlider/>
-        <Footer />
-        </div>
-       }
-      />
+        />
+
         <Route
-       path='/digital-security'
-       element ={
-        <div className="pt-24">
-        <DigitalSlider/>
-        <Footer />
-        </div>
-       }
-      />
-       <Route
-       path='/contact'
-       element ={
-        <div className="pt-24">
-        <ContactForm/>
-        <Footer />
-        </div>
-       }
-      />
-         <Route
-       path='/career'
-       element ={
-        <div className="pt-24">
-        <CareerPage/>
-        <Footer />
-        </div>
-       }
-      />
+          path="/physical-security"
+          element={
+            <div className="pt-24">
+              <PhyscialSlider />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/digital-security"
+          element={
+            <div className="pt-24">
+              <DigitalSlider />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <div className="pt-24">
+              <ContactForm />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/career"
+          element={
+            <div className="pt-24">
+              <CareerPage />
+              <Footer />
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );

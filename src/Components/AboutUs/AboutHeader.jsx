@@ -8,7 +8,7 @@ import StatsSection from './StatsSection';
 import ContactUs from './ContactUs';
 import TeamCard from './TeamSection';
 import TimelineSection from './TimelineSection';
-import img from '../assets/bg1.jpg'; // Your background image
+import img from '../assets/bg2.jpg'; // Your background image
 
 const fadeUp = {
   hidden: { opacity: 0, y: 60 },

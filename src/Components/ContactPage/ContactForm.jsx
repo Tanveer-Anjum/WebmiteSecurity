@@ -2,19 +2,19 @@ import React from "react";
 import { FaFingerprint } from "react-icons/fa";
 import { motion } from "framer-motion";
 import img2 from '../assets/bg2.jpg';
-import img1 from "../assets/bg3.png";
+
+import about from "../assets/bggg.png";
 
 
-// Animation variants
+
+
 const containerVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1,
-    },
-  },
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
 };
 
 const childVariants = {
@@ -32,70 +32,43 @@ const childVariants = {
   },
 };
 
-const heroTextVariants = {
-  hidden: { opacity: 0, y: -20, scale: 0.9 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1, 
-    transition: { 
-      duration: 0.8, 
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 120,
-    },
-  },
-};
 
-const fingerprintVariants = {
-  animate: {
-    y: [0, -15, 0],
-    rotate: [0, 5, -5, 0],
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
+
 
 const ContactForm = () => {
   return (
     <>
-      {/* Top Fingerprint Banner */}
-      <motion.div
-        className="relative w-full h-[190px] sm:h-[220px] md:h-[260px] lg:h-[500px] flex items-center justify-center overflow-hidden text-black"
-         style={{
-                      backgroundImage: `url(${img1})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                      backgroundAttachment: 'fixed',
-                    }}
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.3 }}
+    <motion.div
+    className="w-full h-[60vh] mt-2 items-center flex justify-center bg-cover relative  shadow-[0_5px_10px_rgba(0,0,0,0.3)]"
+    style={{ backgroundImage: `url(${about})` }}
+    variants={containerVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ amount: 0.3 }}
+  >
+    {/* Bottom Shadow Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent pointer-events-none mt-24">
+  
+    {/* Centered Text - Enhanced for professionalism and visibility */}
+    <div className="relative text-center px-6">
+      <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl !font-bold !text-[#15487d] drop-shadow-lg tracking-wide font-[Poppins]">
+        Contact Us
+      </h1>
+      <p className="mt-4 max-w-2xl mx-auto text-gray-800 text-sm sm:text-base md:text-lg !font-bold drop-shadow-md">
+        We are dedicated to providing innovative solutions that blend technology, creativity, and professionalism. Our mission is to build digital experiences that truly inspire.
+      </p>
+  
+      {/* Learn More Button */}
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="mt-4 px-6 py-2 !rounded-3xl bg-[#15487d] text-white !font-bold text-lg shadow-lg hover:shadow-2xl transition-all "
       >
-        {/* Fingerprint Icon with infinite animation */}
-        <motion.div
-          variants={fingerprintVariants}
-          animate="animate"
-          className="absolute"
-        >
-          <FaFingerprint className="text-gray-500 text-[120px] sm:text-[180px] md:text-[220px] lg:text-[280px] opacity-70 drop-shadow-lg" />
-        </motion.div>
-
-        {/* Centered Text - Enhanced for visibility and professionalism */}
-        <motion.h1
-          className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-black drop-shadow-2xl tracking-tight"
-          style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800 }}
-          variants={heroTextVariants}
-        >
-          Get in Touch
-        </motion.h1>
-      </motion.div>
-
+        Learn More
+      </motion.button>
+    </div>
+    </div>
+  </motion.div>
       {/* Contact Section */}
       <motion.div
         className="w-full py-24 px-6 md:px-16 bg-gray-100/95"
@@ -104,7 +77,7 @@ const ContactForm = () => {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        variants={containerVariants}
+        // variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3 }}
@@ -258,11 +231,11 @@ const ContactForm = () => {
               {/* Submit Button */}
               <motion.button
                 type="submit"
-                className="w-full md:w-auto bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition duration-300 ease-in-out"
+                className="w-full md:w-auto !font-bold !bg-[#15487d] hover:bg-gray-800 text-white  px-6 py-2 !rounded-full shadow-md transition duration-300 ease-in-out"
                 whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(0,0,0,0.3)" }}
                 whileTap={{ scale: 0.95 }}
                 variants={childVariants}
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+                style={{ fontFamily: "Arial, sans-serif" }}
               >
                 Send Message →
               </motion.button>

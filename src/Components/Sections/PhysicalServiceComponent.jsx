@@ -34,7 +34,7 @@ export default function Service() {
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-blue-900/20"></div>
 
       {/* Content container */}
       <div className="relative z-10">
@@ -47,17 +47,21 @@ export default function Service() {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center align-center">
-            <span className="text-white font-semibold px-2 py-1 rounded-full text-base sm:text-lg flex gap-1 font-['Roboto_Condensed',sans-serif]">
+            <span className="!text-[#15487d] !font-bold px-2 py-1 rounded-full !text-lg sm:text-lg flex gap-1 
+            "    style={{ fontFamily: "Arial, sans-serif" }}>
               Our Services
             </span>
           </div>
           <motion.h2
-            className="text-white text-lg sm:text-xl md:text-2xl font-semibold leading-tight font-['Roboto_Condensed',sans-serif]"
+            className="!text-[#15487d] text-2xl sm:text-xl md:text-2xl !font-bold leading-tight]"
+             style={{ fontFamily: "Arial, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
+              
           >
+              
             Smart Security Services for Your Safety
           </motion.h2>
         </motion.div>
@@ -128,3 +132,7 @@ export default function Service() {
     </div>
   );
 }
+
+
+
+

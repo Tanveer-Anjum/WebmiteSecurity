@@ -1,24 +1,21 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import "./NewsUpdate.css";
 
-const NewsTicker = ({ showVideo }) => {
-  const location = useLocation();
-
-  // ✅ Brown if we are on digital-security route
-  const isDigital = location.pathname === "/digital-security";
-
+const NewsTicker = ({ showVideo, isDigitalSecurityActive }) => {
   return (
     <div
-      className="ticker-container text-white py-2 bg-[#15487d]"
+      className={`
+        ticker-container text-white py-2 font-bold flex justify-center items-center
+        ${isDigitalSecurityActive ? "bg-[#702829]"  : "bg-[#15487d]"}  
+        /* Brown when Digital, Blue when Physical */
+      `}
+      style={{ fontFamily: "Arial, sans-serif" }}
     >
-      <div className="ticker-content">
-        <span>
-          Latest Update: Shehrity expands digital security services across ANZ! •
-        </span>
-        <span>New CCTV monitoring solutions launched •</span>
-        <span>Now serving clients across 3 continents</span>
-      </div>
+      <p className="text-center text-xs mt-3">
+        {showVideo
+          ? "Streaming Security Insights..."
+          : "Your Trusted Security and Technology Partner"}
+      </p>
     </div>
   );
 };

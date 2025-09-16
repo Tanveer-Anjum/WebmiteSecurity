@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { BiSolidLeftArrowAlt, BiSolidRightArrowAlt } from "react-icons/bi";
@@ -9,59 +10,31 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Styles.css";
-import {
-  EffectCoverflow,
-  Pagination,
-  Autoplay,
-  Navigation,
-} from "swiper/modules";
-import digitalBg from "../assets/ourservices.jpg"; // ✅ Change this to your digital services background
+import { EffectCoverflow, Pagination, Autoplay, Navigation } from "swiper/modules";
+import ourservice from "../assets/ourservices.jpg";
 
-export default function DigitalServices() {
+export default function Service({ isDigitalSecurityActive }) {
   const services = [
-    {
-      img: "/assets/Images/cyber1.jpg",
-      title: "Cybersecurity",
-      desc: "Protecting systems against malware, phishing & threats.",
-    },
-    {
-      img: "/assets/Images/cyber2.jpg",
-      title: "Firewall Protection",
-      desc: "Strong firewall systems to block unauthorized access.",
-    },
-    {
-      img: "/assets/Images/cyber3.jpg",
-      title: "Data Encryption",
-      desc: "Securing sensitive data with advanced encryption.",
-    },
-    {
-      img: "/assets/Images/cyber4.jpg",
-      title: "Threat Monitoring",
-      desc: "24/7 monitoring for digital threat detection.",
-    },
-    {
-      img: "/assets/Images/cyber5.jpg",
-      title: "Network Security",
-      desc: "Ensuring safe and secure digital communication.",
-    },
-    {
-      img: "/assets/Images/cyber6.jpg",
-      title: "Cloud Security",
-      desc: "Advanced protection for your cloud infrastructure.",
-    },
+    { img: "/assets/Images/girls.jpg", title: "Guard Services", desc: "Professional guards ensuring your safety 24/7." },
+    { img: "/assets/Images/12.jpg", title: "CCTV Monitoring", desc: "Smart surveillance with real-time monitoring." },
+    { img: "/assets/Images/girls.jpg", title: "Patrolling", desc: "Regular patrolling to secure your premises." },
+    { img: "/assets/Images/13.png", title: "Access Control", desc: "Fingerprint and card-based secure access." },
+    { img: "/assets/Images/22.jpg", title: "Event Security", desc: "Reliable security for corporate & personal events." },
+    { img: "/assets/Images/girls.jpg", title: "VIP Protection", desc: "Dedicated bodyguards for personal safety." },
   ];
 
   return (
     <div
       className="py-8 px-4 sm:px-6 lg:px-12 relative"
       style={{
-        backgroundImage: `url(${digitalBg})`,
+        backgroundImage: `url(${ourservice})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-      }}>
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      }}
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 "></div>
 
       {/* Content container */}
       <div className="relative z-10">
@@ -71,20 +44,29 @@ export default function DigitalServices() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}>
-          <div className="flex justify-center align-center">
-            <span className="text-white font-semibold px-2 py-1 rounded-full text-base sm:text-lg flex gap-1 font-['Roboto_Condensed',sans-serif]">
-              Digital Security Services
-            </span>
+          transition={{ duration: 0.5 }}
+        >
+       <div className="flex items-center gap-2 justify-center">
+            <header
+              className={`font-bold text-sm sm:text-base ${
+                isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
+              }`}
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
+              Why Choose Us
+            </header>
           </div>
-          <motion.h2
-            className="text-white text-lg sm:text-xl md:text-2xl font-semibold leading-tight font-['Roboto_Condensed',sans-serif]"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1 }}>
-            Advanced Protection for Your Digital World
-          </motion.h2>
+        <motion.h2
+  className={`text-2xl sm:text-xl md:text-2xl !font-bold leading-tight font-['Roboto_Condensed',sans-serif] 
+    ${isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"}`}
+  style={{ fontFamily: "Arial, sans-serif" }}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.4, delay: 0.1 }}
+>
+  Advanced Protection for Your Digital World
+</motion.h2>
         </motion.div>
 
         {/* ✅ Swiper Carousel */}
@@ -117,11 +99,13 @@ export default function DigitalServices() {
               1024: { slidesPerView: 2, spaceBetween: 25 },
             }}
             modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-            className="mySwiper">
+            className="mySwiper"
+          >
             {services.map((service, i) => (
               <SwiperSlide
                 key={i}
-                className="relative group rounded-lg overflow-hidden shadow-md">
+                className="relative group rounded-lg overflow-hidden shadow-md"
+              >
                 <img
                   src={service.img}
                   alt={service.title}
@@ -129,13 +113,11 @@ export default function DigitalServices() {
                 />
 
                 {/* ✅ Hover Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-black/80 text-white p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/10 text-white p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
                   <h3 className="text-sm sm:text-base font-semibold">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm opacity-90">
-                    {service.desc}
-                  </p>
+                  <p className="text-xs sm:text-sm opacity-90">{service.desc}</p>
                 </div>
               </SwiperSlide>
             ))}

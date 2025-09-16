@@ -33,11 +33,11 @@ const StatsSection = () => {
             className="w-20 h-20 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-900 transition-colors duration-300 transform group-hover:scale-110"
             style={{ fontFamily: "Arial Narrow, Arial, sans-serif" }}
           >
-            <stat.icon className="w-10 h-10 text-white" />
+            <stat.icon className="w-10 h-10 text-[#15487d]" />
           </div>
 
           {/* Number Animation */}
-          <div className="text-3xl font-bold text-gray-900 mb-2 drop-shadow-md">
+          <div className="text-3xl font-bold text-[#15487d] mb-2 drop-shadow-md">
             <CountUp
               start={0}
               end={stat.number}
@@ -49,7 +49,7 @@ const StatsSection = () => {
           </div>
 
           {/* Label */}
-          <div className="text-gray-700 font-medium tracking-wide">{stat.label}</div>
+          <div className="text-[#15487d] font-medium tracking-wide">{stat.label}</div>
         </motion.div>
       ))}
     </div>

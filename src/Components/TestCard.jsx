@@ -5,7 +5,13 @@ import "../Components/Sass/TestCard.scss";
 import ScrollToTop from "./ScrollToTop";
 import { BiSolidLeftArrowAlt, BiSolidRightArrowAlt } from "react-icons/bi";
 import img from './assets/bg2.jpg'
-export default function TestCard() {
+
+
+
+
+
+
+export default function TestCard({ isDigitalSecurityActive }) {
   const testimonials = [
     {
       quote: "Morgaan Smith is effectively a review or recommendation from a client...",
@@ -46,30 +52,37 @@ export default function TestCard() {
     <div className="py-12 px-4" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       
       {/* Header */}
-      <header className="text-center mb-10 space-y-3">
+      <header className="text-center mb-10 space-y-3 font-bold text-sm sm:text-base">
         <motion.span
-          className="text-[#15487d] font-semibold px-3 py-2 rounded-full text-xs sm:text-sm flex justify-center items-center gap-2"
+          className={`!font-bold px-3 py-2 rounded-full flex justify-center items-center gap-2 ${
+            isDigitalSecurityActive ? "!text-[#702829]" : "!text-[#15487d]"
+          }`}
+          style={{ fontFamily: "Arial, sans-serif" }}
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <FaFingerprint /> Testimonials
+          Testimonials
         </motion.span>
 
-        <motion.h1
-          className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mt-2 leading-snug"
+        <motion.h2
+          className={`text-2xl sm:text-3xl md:text-4xl !font-bold leading-snug justify-center text-center ${
+            isDigitalSecurityActive ? "!text-black" : "!text-[#15487d]"
+          }`}
+          style={{ fontFamily: "Arial, sans-serif" }}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
           Client Testimonials
-        </motion.h1>
+        </motion.h2>
       </header>
 
       {/* Card */}
       <motion.div
+       style={{ fontFamily: "Arial, sans-serif" }}
         className="w-full max-w-6xl"
         initial={{ opacity: 0, y: 80 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -80,11 +93,11 @@ export default function TestCard() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             
             {/* Left Text */}
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-2">
               <p className="text-gray-600 text-sm leading-relaxed">
                 "{current.quote}"
               </p>
-              <div className="flex items-center space-x-3 pt-1">
+              <div className="flex items-center space-x-2 pt-1">
                 <img
                   src={current.avatar}
                   alt={current.name}

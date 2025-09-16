@@ -33,12 +33,13 @@ const NavBar = ({ handleSecuritySwitch, isDigitalSecurityActive }) => {
   return (
     <>
       {/* Navbar */}
-      <nav
-        className={`fixed top-8 left-0 right-0 z-50 flex items-center justify-center px-6 py-2 whitespace-nowrap transition-all duration-300 h-[80px] ${
-          isScrolled || isSpecialPage
-            ? "bg-white border-b border-gray-200"
-            : "backdrop-blur-md bg-white/10 border-b border-white/20 "
-        }`}>
+ <nav
+  className={`!fixed left-0 right-0 z-50 flex items-center justify-center px-6 py-2 whitespace-nowrap transition-all duration-300 h-[80px]
+    ${isScrolled || isSpecialPage 
+      ? "bg-white border-b border-gray-200 text-black top-8"   // ✅ white bg + black text for special pages
+      : "backdrop-blur-md bg-white/10 border-b border-white/20 text-white top-8" // ✅ transparent bg + white text on Home
+    }`}
+>
         {/* Logo - positioned absolutely to the left */}
         <div className="absolute left-6 flex items-center">
           <Link to="/">
@@ -51,103 +52,105 @@ const NavBar = ({ handleSecuritySwitch, isDigitalSecurityActive }) => {
         </div>
 
         {/* Desktop Menu - centered */}
-        <ul className="hidden md:flex items-center gap-8 font-semibold">
-          {["Home", "About", "Services", "Contact", "Career"].map(
-            (item, idx) => (
-              <li key={idx}>
-                {item === "Services" ? (
-                  <div className="relative group">
-                    <button
-                      className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black"
-                      onMouseEnter={() => setServicesDropdown(true)}
-                      onMouseLeave={() => setServicesDropdown(false)}>
-                      Services
-                    </button>
-                    {servicesDropdown && (
-                      <div
-                        className="absolute top-[90%] left-0 mt-0 w-48 bg-white shadow-lg rounded-md border border-gray-200 py-2 z-50"
-                        onMouseEnter={() => setServicesDropdown(true)}
-                        onMouseLeave={() => setServicesDropdown(false)}>
-                        <Link
-                          to="/physical-security"
-                          className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors">
-                          Physical Security
-                        </Link>
-                        <Link
-                          to="/digital-security"
-                          className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block px-4 py-2 text-gray-800 hover:bg-gray-100 transition-colors">
-                          Digital Security
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black">
-                    {item}
-                  </Link>
-                )}
-              </li>
-            )
+      <ul
+  className={`hidden md:flex items-center gap-8 font-semibold !mt-4  text-sm transition-colors duration-300  ${
+    isScrolled ? "text-black" : "text-gray-800"
+  }`
+  
+  }
+    style={{ fontFamily: "Arial, sans-serif" }}
+>
+  {["Home", "About", "Services", "Contact", "Career"].map((item, idx) => (
+    <li key={idx}>
+      {item === "Services" ? (
+        <div className="relative group">
+          <button
+            className={`relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 ${
+              isScrolled || isSpecialPage
+                ? "text-black after:bg-black"
+                : "text-white after:bg-white"
+            }`}
+            style={{ fontFamily: "Arial, sans-serif" }}
+            onMouseEnter={() => setServicesDropdown(true)}
+            onMouseLeave={() => setServicesDropdown(false)}
+          >
+            Services
+          </button>
+          {servicesDropdown && (
+           <div
+  className="absolute top-[90%] left-0 mt-0 w-48 bg-gray-200 shadow-lg rounded-md border border-gray-200 py-2 z-50"
+  onMouseEnter={() => setServicesDropdown(true)}
+  onMouseLeave={() => setServicesDropdown(false)}
+>
+  <Link
+    to="/physical-security"
+    className="relative block px-4 py-2 text-black hover:after:w-full !no-underline 
+               after:content-[''] after:absolute after:w-0 after:h-[2px] 
+               after:left-0 after:bottom-1 after:transition-all after:duration-300 after:bg-black"
+  >
+    Physical Security
+  </Link>
+  <Link
+    to="/digital-security"
+    className="relative block px-4 py-2 text-black hover:after:w-full !no-underline 
+               after:content-[''] after:absolute after:w-0 after:h-[2px] 
+               after:left-0 after:bottom-1 after:transition-all after:duration-300 after:bg-black"
+  >
+    Digital Security
+  </Link>
+</div>
           )}
-        </ul>
+        </div>
+      ) : (
+        <Link
+          to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+        className={`relative py-3 hover:after:w-full !no-underline 
+  after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 
+  after:transition-all after:duration-300
+  ${isScrolled || isSpecialPage 
+    ? "text-black after:bg-black" 
+    : "text-white after:bg-white"
+  }`}
 
-        {/* ✅ Desktop Button - positioned absolutely to the right */}
-        {isDigitalSecurityActive ? (
-          <button
-            onClick={() => handleSecuritySwitch(false)}
-            className={`hidden md:block absolute right-6 px-6 py-2.5 font-medium rounded-full transition-all duration-300 ${
-              isScrolled
-                ? "bg-[#15487d] text-white hover:bg-[#0f3a63]"
-                : "bg-white text-[#15487d] hover:bg-gray-100"
-            }`}
-            style={{ borderRadius: "9999px" }}>
-            Switch to Physical Security
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              setShowVideo(true);
-              handleSecuritySwitch(true);
-            }}
-            className={`hidden md:block absolute right-6 px-6 py-2.5 font-medium rounded-full transition-all duration-300 ${
-              isScrolled
-                ? "bg-[#15487d] text-white hover:bg-[#0f3a63]"
-                : "bg-[#15487d] text-white hover:bg-[#0f3a63]"
-            }`}
-            style={{ borderRadius: "9999px" }}>
-            Switch to Digital Security
-          </button>
-        )}
+        >
+          {item}
+        </Link>
+      )}
+    </li>
+  ))}
+</ul>
+
+
+        {/* Desktop Button - positioned absolutely to the right */}
+
 
         {/* Hamburger for Mobile - positioned absolutely to the right */}
         <button
-          className="md:hidden absolute top-[35px] right-6 text-2xl transition-colors text-[#15487d]"
+          className="md:hidden absolute top-[24px] right-6  transition-colors text-[#15487d]"
           onClick={() => setMenuOpen(true)}>
-          <FaBars />
+          <FaBars className="text-3xl" />
         </button>
       </nav>
 
       {/* Mobile Slide Menu */}
       <div
-        className={`fixed top-[40px] right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
+        className={`fixed top-10 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}>
         {/* Close button */}
         <button
-          className="absolute top-4 right-4 text-2xl text-gray-700"
+          className="absolute top-4 right-4 text-sm text-gray-700"
           onClick={() => setMenuOpen(false)}>
-          <FaTimes />
+          <FaTimes className="text-3xl" />
         </button>
 
         {/* Links */}
-        <ul className="flex flex-col mt-16 px-6 font-semibold gap-4">
+        <ul className="flex flex-col mt-16 px-6 font-semibold text-sm ">
           {["Home", "About", "Contact", "Career"].map((item, idx) => (
             <li key={idx}>
               <Link
                   to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block text-gray-800 hover:text-[#15487d] transition text-lg py-2"
+                  className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 after:bg-black block !text-gray-800 hover:text-[#15487d] transition  text-sm"
                 onClick={() => setMenuOpen(false)}>
                 {item}
               </Link>
@@ -155,19 +158,19 @@ const NavBar = ({ handleSecuritySwitch, isDigitalSecurityActive }) => {
           ))}
           <li>
             <div className="border-t border-gray-200 pt-4">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2 border-b border-gray-200 pb-2">
+              <h3 className="text-md font-semibold text-gray-800 mb-2 border-b border-gray-200 pb-2">
                 Services
               </h3>
               <div className="pl-4 space-y-2">
                 <Link
                   to="/physical-security"
-                  className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block py-2 text-gray-700 hover:text-[#15487d] transition-colors"
+                  className="relative hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block py-2 text-gray-700 hover:text-[#15487d] transition-colors"
                   onClick={() => setMenuOpen(false)}>
                   Physical Security
                 </Link>
                 <Link
                   to="/digital-security"
-                  className="relative py-3 hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block py-2 text-gray-700 hover:text-[#15487d] transition-colors"
+                  className="relative hover:after:w-full !no-underline after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:bottom-1 after:transition-all after:duration-300 text-black after:bg-black block py-2 text-gray-700 hover:text-[#15487d] transition-colors"
                   onClick={() => setMenuOpen(false)}>
                   Digital Security
                 </Link>
@@ -177,7 +180,7 @@ const NavBar = ({ handleSecuritySwitch, isDigitalSecurityActive }) => {
         </ul>
 
         {/* Mobile Button */}
-        <div className="mt-8 px-6">
+        <div className="mt-6 px-6">
           {isDigitalSecurityActive ? (
             <button
               onClick={() => {

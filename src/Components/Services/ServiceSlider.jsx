@@ -46,11 +46,13 @@ const ServiceSlider = () => {
         </div>
 
         {/* Overlay Text */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/40 text-white">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2 font-['Roboto_Condensed',sans-serif]">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-3xl md:text-4xl !font-bold mb-2 font-['Roboto_Condensed',sans-serif] !text-[#15487d]"
+           style={{ fontFamily: "Arial, sans-serif" }}>
             Our Services
           </h1>
-          <p className="text-sm md:text-base max-w-xl font-['Roboto_Condensed',sans-serif]">
+          <p className="text-sm md:text-base max-w-xl !font-bold !text-[#15487d]"
+           style={{ fontFamily: "Arial, sans-serif" }}>
             Explore our services tailored for both physical and digital worlds.
           </p>
         </div>

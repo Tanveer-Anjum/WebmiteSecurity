@@ -38,7 +38,7 @@ const ScrollToTop = () => {
           cx="28"
           cy="28"
           r={radius}
-          stroke="lightgray"
+          stroke="#15487d"
           strokeWidth="2"
           fill="transparent"
         />
@@ -61,3 +61,18 @@ const ScrollToTop = () => {
 };
 
 export default ScrollToTop;
+
+
+    
+       
+
+
+
+
+
+                  
+
+                
+
+
+                     

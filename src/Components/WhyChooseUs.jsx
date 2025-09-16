@@ -1,19 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFingerprint, FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 import bigImg from "/assets/Images/girls.jpg";
 import smallImg1 from "/assets/Images/12.jpg";
 import smallImg2 from "/assets/Images/13.png";
-import img from './assets/bg1.jpg'
-const WhyChooseUs = () => {
+import img from "./assets/bg3.png";
+
+const WhyChooseUs = ({ isDigitalSecurityActive }) => {
   return (
-    <section className="py-12 md:py-16 bg-white" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section
+      className="py-12 md:py-16 bg-gray-600"
+      style={{
+        backgroundImage: `url(${img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-6 md:px-12">
-        
-        {/* Left side - 3 Images */}
+        {/* Left side - Images */}
         <div className="grid grid-cols-2 gap-4">
-          {/* Big Image */}
           <motion.img
             src={bigImg}
             alt="Main"
@@ -22,7 +28,6 @@ const WhyChooseUs = () => {
             transition={{ type: "spring", stiffness: 100 }}
           />
 
-          {/* Two smaller stacked images */}
           <div className="flex flex-col gap-4">
             <motion.img
               src={smallImg1}
@@ -49,20 +54,32 @@ const WhyChooseUs = () => {
           className="space-y-6 text-center lg:text-left"
         >
           {/* Heading */}
-          <div className="flex items-center gap-2 justify-center lg:justify-start">
-            <FaFingerprint className="text-[#15487d] text-lg" />
-            <header className="text-[#15487d] font-semibold text-sm sm:text-base">
+          <div className="flex items-center gap-2 justify-center">
+            <header
+              className={`font-bold text-sm sm:text-base ${
+                isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
+              }`}
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
               Why Choose Us
             </header>
           </div>
 
           {/* Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+          <h2
+            className={`text-2xl sm:text-3xl md:text-4xl !font-bold leading-snug justify-center text-center ${
+              isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"
+            }`}
+            style={{ fontFamily: "Arial, sans-serif" }}
+          >
             WE'RE QUALIFIED & PROFESSIONAL
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
+          <p
+            className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg justify-center align-center"
+            style={{ fontFamily: "Arial, sans-serif" }}
+          >
             Shehrity is a leading security services provider dedicated to
             ensuring safety through innovation and professionalism. With
             experienced staff and advanced technology, we deliver unmatched
@@ -70,7 +87,7 @@ const WhyChooseUs = () => {
           </p>
 
           {/* Bullet Points */}
-          <ul className="space-y-3 text-sm sm:text-base">
+          <ul className="space-y-3 text-sm sm:text-base text-gray-900">
             {[
               "Security Consulting",
               "Private Security",

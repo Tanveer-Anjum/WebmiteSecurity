@@ -43,7 +43,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="text-gray-300 font-sans bg-[#15487d]">
+    <footer className="text-gray-300 font-sans !bg-[#15487d]">
       
       {/* Top Social Bar */}
       
@@ -54,7 +54,8 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-20 mb-4" />
-            <p className="text-md leading-relaxed hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+            <p className="text-md leading-relaxed hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1 text-bold"
+                style={{ fontFamily: "Arial, sans-serif" }}>
               Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
             </p>
         <div>
@@ -85,7 +86,8 @@ export default function Footer() {
 
           {/* Column 2: Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+            <h3 className="!text-xl !font-bold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1 !mt-7"
+                style={{ fontFamily: "Arial, sans-serif" }}>
               Services We Offer
             </h3>
             <ul className="space-y-3 text-sm">
@@ -107,7 +109,8 @@ export default function Footer() {
 
           {/* Column 3: Useful Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+            <h3 className="!text-xl !font-bold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1  !mt-7"   
+              style={{ fontFamily: "Arial, sans-serif" }}>
               Useful Links
             </h3>
             <ul className="space-y-3 text-sm">
@@ -129,7 +132,8 @@ export default function Footer() {
 
           {/* Column 4: Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+            <h3 className="!text-xl !font-bold mb-4 text-white ml-8 hover:text-blue-400 transition duration-300 cursor-pointer transform hover:-translate-y-1 !mt-7"
+                style={{ fontFamily: "Arial, sans-serif" }}>
               Contact Us
             </h3>
             <ul className="space-y-4 text-sm">
@@ -154,21 +158,25 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white">
-        <div className="container mx-auto px-6 py-2 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p className="hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1">
+        <div className="container mx-auto px-6 py-2 flex flex-col md:flex-row justify-between items-center text-sm"
+          style={{ fontFamily: "Arial, sans-serif" }}>
+          <p className="hover:text-blue-300 transition duration-300 cursor-pointer transform hover:-translate-y-1"
+          >
             Copyright &copy; {new Date().getFullYear()} Shehrity. All Rights Reserved
           </p>
           <div className="flex space-x-6 mt-2 md:mt-0">
             <a
               href="#"
               className="!no-underline text-white transition duration-300 transform hover:-translate-y-1 hover:!text-blue-300"
-            >
+                style={{ fontFamily: "Arial, sans-serif" }}>
+            
               Terms & Conditions
             </a>
             <a
               href="#"
               className="!no-underline text-white transition duration-300 transform hover:-translate-y-1 hover:!text-blue-300"
-            >
+  style={{ fontFamily: "Arial, sans-serif" }}>
+            
               Privacy Policy
             </a>
           </div>

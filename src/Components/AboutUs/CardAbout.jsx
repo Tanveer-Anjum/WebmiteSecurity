@@ -2,22 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Shield, Award, Users } from "lucide-react";
 import background from "../assets/bg2.jpg"; // ✅ import background image
+import ourservice from "../assets/ourservices.jpg";
 
 export default function CardAbout() {
   return (
     <section
-      className="relative w-full py-20"
-      style={{
-        fontFamily: "Arial Narrow",
-        backgroundImage: `url(${background})`, // ✅ background from import
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Dark Overlay for readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
-
+          className="py-8 px-4 sm:px-6 lg:px-12 relative"
+          style={{
+            backgroundImage: `url(${ourservice})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-blue-900/20"></div>
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 z-10">
         {/* Card 1 */}
@@ -29,7 +28,7 @@ export default function CardAbout() {
           whileHover={{ scale: 1.05, rotateY: 10 }}
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
-          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
             <Shield className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
           </div>
           <h3
@@ -58,8 +57,8 @@ export default function CardAbout() {
           whileHover={{ scale: 1.05, rotateY: 10 }}
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-green-600 transition-colors duration-300">
-            <Award className="w-8 h-8 text-green-600 group-hover:text-white transition-colors duration-300" />
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
+            <Award className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-4">LICENSED</h3>
           <p className="text-gray-600 leading-relaxed">
@@ -79,8 +78,8 @@ export default function CardAbout() {
           whileHover={{ scale: 1.05, rotateY: 10 }}
           className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group"
         >
-          <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-orange-600 transition-colors duration-300">
-            <Users className="w-8 h-8 text-orange-600 group-hover:text-white transition-colors duration-300" />
+          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#15487d] transition-colors duration-300">
+            <Users className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-4">TOP NOTCH</h3>
           <p className="text-gray-600 leading-relaxed">

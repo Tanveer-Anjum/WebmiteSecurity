@@ -1,15 +1,17 @@
 import React from "react";
 import vidios from "/assets/Videos/123.mp4";
+import { TypeAnimation } from "react-type-animation";
+
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden pt-[80px] md:pt-[100px]">
+    <div className="relative w-full h-[95vh] overflow-hidden pt-[10px] md:pt-[95px]">
       {/* Background Video */}
       <video
         autoPlay
         loop
         muted
-        playsInline // ✅ Prevent fullscreen controls on mobile
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src={vidios} type="video/mp4" />
@@ -19,41 +21,71 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center items-start h-full px-6 sm:px-10 md:px-16 text-white">
+      <div className="relative z-10 flex flex-col justify-center items-start h-full px-6 sm:px-10 md:px-16 text-white space-y-4 sm:space-y-8 mt-24 sm:mt-20 lg:mt-6">
         {/* Title */}
-        <h1 className="text-xl sm:text-2xl md:text-4xl font-bold max-w-xl sm:max-w-2xl leading-snug font-['Roboto',sans-serif]">
-          Protecting People, Assets & Communities — <br className="hidden sm:block" />
-          Trusted Physical Security Solutions.
+        <h1
+          className="text-xl sm:text-2xl md:text-4xl font-bold max-w-xl sm:max-w-2xl leading-snug"
+          style={{ fontFamily: "Arial, sans-serif" }}
+        >
+          Protecting People, Assets & Communities —
+          <br className="hidden sm:block" />
+          <TypeAnimation
+            sequence={[
+              "Trusted Physical Security Solutions.", // text
+              2000, // wait 2 sec
+              "", // delete
+              500, // small pause
+            ]}
+            wrapper="span"
+            speed={10}
+            deletionSpeed={30}
+            repeat={Infinity}
+            className="text-[#ffffff] text-xl sm:text-2xl md:text-3xl font-bold"
+          />
         </h1>
 
         {/* Paragraph */}
-        <p className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg max-w-md sm:max-w-xl font-['Roboto',sans-serif]">
-          Comprehensive protection powered by expertise, technology, and 24/7 support.
+        <p
+          className="sm:text-base md:text-sm max-w-md sm:max-w-xl mt-2"
+          style={{ fontFamily: "Arial, sans-serif", fontWeight: "bold" }}
+        >
+          Comprehensive protection powered by expertise, technology, and 24/7
+          support.
         </p>
 
         {/* Buttons */}
-        <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-          <button className="bg-[#15487d] hover:bg-blue-900 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition text-sm font-['Roboto',sans-serif]">
-            Request the free Security Audit
+        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <button
+            className="bg-[#15487d] hover:bg-blue-950 px-5 py-2.5 rounded-full transition text-sm font-bold"
+            style={{ borderRadius: "9999px", fontFamily: "Arial, sans-serif" }}
+          >
+            About Us
           </button>
-          <button className="bg-gray-800 hover:bg-gray-900 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition text-sm font-['Roboto',sans-serif]">
-            View Solution
-          </button>
+       <button
+  className="bg-white !border !border-blue-600 text-black hover:bg-gray-100 px-5 py-2 rounded-full transition text-sm font-bold"
+   style={{ borderRadius: "9999px", fontFamily: "Arial, sans-serif" }}
+>
+  View Solution
+</button>
+
         </div>
 
         {/* Checkpoints */}
-        <div className="mt-5 sm:mt-6 flex flex-wrap gap-2 sm:gap-3">
-          <span className="px-2 sm:px-3 py-1 sm:py-1.5 border border-gray-300 rounded-full text-xs sm:text-sm font-['Roboto',sans-serif]">
+        <div className="flex flex-wrap gap-1 mb-2">
+          <span className="px-3 py-1.5 border border-gray-300 rounded-full text-sm">
             ✔️ ISO Certified
           </span>
-          <span className="px-2 sm:px-3 py-1 sm:py-1.5 border border-gray-300 rounded-full text-xs sm:text-sm font-['Roboto',sans-serif]">
+          <span className="px-3 py-1.5 border border-gray-300 rounded-full text-sm">
             ✔️ Trusted by NGOs & Enterprises
           </span>
-          <span className="px-2 sm:px-3 py-1 sm:py-1.5 border border-gray-300 rounded-full text-xs sm:text-sm font-['Roboto',sans-serif]">
+          <span className="px-3 py-1.5 border border-gray-300 rounded-full text-sm">
             ✔️ 24/7 Support
           </span>
         </div>
+       
       </div>
+     
+
     </div>
   );
 };

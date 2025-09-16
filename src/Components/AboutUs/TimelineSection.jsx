@@ -57,9 +57,11 @@ export default function TimelineSection() {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
-      <div className="flex justify-center items-center align-items-center flex-row gap-2">
-        <FaFingerprint className="text-[#15487d] text-lg mb-16 gap-2" />
-        <h2 className="text-2xl font-bold text-center text-gray-900 mb-16">
+      <div className="flex justify-center items-center align-items-center flex-row gap-2 mb-16 ">
+      
+        <h2 className="text-2xl !font-bold text-center !text-[#15487d] "
+           style={{ fontFamily: "Arial, sans-serif" }}
+        >
           Our Journey
         </h2>
       </div>
@@ -84,19 +86,21 @@ export default function TimelineSection() {
                   index % 2 === 0 ? "pr-8 text-right" : "pl-8"
                 }`}>
                 <div className="bg-blue-50 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:bg-blue-100 transition-all duration-300">
-                  <div className="text-blue-600 font-bold text-2xl mb-2">
+                  <div className="text-[#15487d] font-bold text-2xl mb-2">
                     {milestone.year}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl !font-bold text-[#15487d] mb-2"
+                   style={{ fontFamily: "Arial, sans-serif" }}
+                  >
                     {milestone.event}
                   </h3>
-                  <p className="text-gray-600">{milestone.desc}</p>
+                  <p className="text-[#15487d]">{milestone.desc}</p>
                 </div>
               </div>
 
               {/* Circle on the line */}
               <div className="relative z-10">
-                <div className="w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-lg transition-transform duration-300 hover:scale-125"></div>
+                <div className="w-5 h-5 bg-[#15487d] rounded-full border-4 border-white shadow-lg transition-transform duration-300 hover:scale-125"></div>
               </div>
 
               <div className="w-1/2"></div>

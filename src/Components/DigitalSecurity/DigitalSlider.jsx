@@ -5,14 +5,13 @@ import {
   Shield,
   Monitor,
   Cpu,
-  ArrowRight,
   CheckCircle,
   Zap,
   Database,
 } from "lucide-react";
 import p from "../assets/bggg.png";
 import img1 from "../assets/bg4.png";
-import img2 from "../assets/bg1.jpg";
+import img2 from "../assets/bg3.png";
 
 // Animation Variants
 const containerVariants = {
@@ -45,19 +44,6 @@ const slideInVariants = {
   },
 };
 
-const buttonVariants = {
-  idle: {
-    scale: 1,
-    boxShadow: "0 4px 15px rgba(30, 58, 138, 0.3)", // navy shadow
-  },
-  hover: {
-    scale: 1.05,
-    boxShadow: "0 6px 25px rgba(30, 58, 138, 0.6)",
-    transition: { duration: 0.2, ease: "easeInOut" },
-  },
-  tap: { scale: 0.97 },
-};
-
 const DigitalSlider = () => {
   const features = [
     {
@@ -83,35 +69,40 @@ const DigitalSlider = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-white via-gray-100 to-white">
+    <div className="relative overflow-hidden">
       {/* Hero Section */}
       <motion.section
-        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        className="relative h-[60vh] flex items-center justify-center bg-cover bg-center "
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3}}
+        viewport={{ amount: 0.3 }}
         style={{
           backgroundImage: `url(${p})`,
         }}
       >
-        {/* Overlay for better text visibility */}
-        <div className="absolute inset-0 bg-white/60" />
+        {/* Overlay */}
+        <div className="absolute inset-0" />
+        {/* ✅ Bottom shadow */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
+
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
           <motion.div className="mb-8" variants={fadeInUpVariants}>
             <motion.div
               className="inline-flex items-center gap-2 bg-[rgb(0,0,128)]/10 backdrop-blur-sm border border-[rgb(0,0,128)]/30 rounded-full px-4 py-2 mb-6"
               whileHover={{ scale: 1.05 }}
             >
-              <Zap className="w-4 h-4 text-[rgb(0,0,128)]" />
-              <span className="text-[rgb(0,0,128)] text-sm font-medium">
+              <Zap className="w-4 h-4 !font-bold !text-[#15487d]" />
+              <span className="!font-bold !text-[#15487d] text-sm">
                 Digital Security Innovation
               </span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight leading-tight text-black mb-6">
-              Advanced {" "}
-              <span className="block text-[rgb(0,0,128)] font-bold">Digital Security</span>
+            <h1 className="text-5xl md:text-6xl tracking-tight leading-tight !font-bold !text-[#15487d] mb-6">
+              Advanced{" "}
+              <span className="block !font-bold !text-[#15487d] ">
+                Digital Security
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-medium text-gray-800">
@@ -120,35 +111,29 @@ const DigitalSlider = () => {
               comprehensive data protection services.
             </p>
           </motion.div>
-
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            variants={fadeInUpVariants}
-          >
-           
-          </motion.div>
         </div>
       </motion.section>
 
       {/* Features Section */}
       <motion.section
-        className="relative py-20 bg-white"
+        className="relative py-20 bg-white bg-cover bg-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3}}
+        viewport={{ amount: 0.3 }}
         style={{
           backgroundImage: `url(${img1})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
+        {/* ✅ Bottom shadow */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 to-transparent"></div>
+
         <div className="relative max-w-6xl mx-auto px-6">
           <motion.div className="text-center mb-16" variants={fadeInUpVariants}>
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            <h2 className="text-3xl md:text-4xl !font-bold !text-[#15487d] mb-4">
               Why Choose Our Cybersecurity Solutions?
             </h2>
-            <p className="text-black text-lg max-w-2xl mx-auto">
+            <p className="text-gray-900 text-lg max-w-2xl mx-auto ">
               Industry-leading digital protection powered by advanced AI and
               expert security professionals
             </p>
@@ -168,12 +153,8 @@ const DigitalSlider = () => {
                 <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="font-semibold mb-2 text-lg">
-                  {feature.title}
-                </h3>
-                <p className="text-sm leading-relaxed">
-                  {feature.description}
-                </p>
+                <h3 className="font-semibold mb-2 text-lg">{feature.title}</h3>
+                <p className="text-sm leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -182,23 +163,24 @@ const DigitalSlider = () => {
 
       {/* Value Proposition Section */}
       <motion.section
-        className="relative py-20 bg-white"
+        className="relative py-20 bg-white bg-cover bg-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3}}
+        viewport={{ amount: 0.3 }}
         style={{
           backgroundImage: `url(${img2})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
         }}
       >
+        {/* ✅ Bottom shadow */}
+        <div className="absolute bottom-0 left-0 right-0 h-32  to-transparent"></div>
+
         <div className="relative max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div variants={slideInVariants}>
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+              <h2 className="text-3xl md:text-4xl !font-bold !text-[#15487d] mb-6">
                 Next-Generation Cybersecurity
-                <span className="block text-black">
+                <span className="block !text-[#15487d] !font-bold">
                   Protection & Intelligence
                 </span>
               </h2>
@@ -241,7 +223,7 @@ const DigitalSlider = () => {
                     solutions and expert threat intelligence.
                   </p>
                   <motion.button
-                    className="bg-gray-300 text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-400 transition-colors"
+                    className="bg-[#15487d] text-white px-6 py-2 rounded-full !font-bold hover:bg-gray-600 transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -259,7 +241,7 @@ const DigitalSlider = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3}}
+        viewport={{ amount: 0.3 }}
       >
         <DigitalServices />
       </motion.div>
@@ -268,5 +250,3 @@ const DigitalSlider = () => {
 };
 
 export default DigitalSlider;
-
-

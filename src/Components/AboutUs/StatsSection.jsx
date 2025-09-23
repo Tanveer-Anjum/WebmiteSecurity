@@ -31,42 +31,47 @@ const StatsSection = ({ isDigitalSecurityActive }) => {
                         transition-all duration-300 transform group-hover:scale-110 
                         ${
                           isDigitalSecurityActive
-                            ? "bg-yellow-100 !group-hover:bg-[#8B4513]" // brown for digital mode
-                            : "bg-blue-100 group-hover:bg-[#15487d]" // blue for physical mode
+                            ? "bg-[#f5e6da] group-hover:bg-[#702829]" // light brown bg → dark brown hover
+                            : "bg-blue-100 group-hover:bg-[#15487d]" // light blue bg → dark blue hover
                         }`}
-            style={{ fontFamily: "Arial Narrow, Arial, sans-serif" }}
           >
             <stat.icon
               className={`w-10 h-10 transition-colors duration-300 
                 ${
                   isDigitalSecurityActive
-                    ? "!text-[#8B4513] group-hover:text-white"
-                    : "text-[#15487d] group-hover:text-white"
+                    ?"text-[#702829] group-hover:text-white" // brown → white on hover
+                    : "text-[#15487d] group-hover:text-white" // blue → white on hover
                 }`}
             />
           </div>
 
           {/* Number Animation */}
-          <div
-            className={`text-3xl font-bold mb-2 drop-shadow-md ${
-              isDigitalSecurityActive ? "text-[#8B4513]" : "text-[#15487d]"
-            }`}
-          >
-            <CountUp
-              start={0}
-              end={stat.number}
-              duration={3}
-              enableScrollSpy
-              scrollSpyDelay={100}
-            />
-            {stat.suffix}
-          </div>
+        <div
+  className={`text-3xl font-bold mb-2 drop-shadow-md ${
+    isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
+  }`}
+>
+  <CountUp
+    start={0}
+    end={stat.number}
+    duration={3}
+    enableScrollSpy={true}  // ✅ safe scrollspy
+    scrollSpyOnce={true}    // ✅ run only once
+  >
+     {({ countUpRef }) => (
+      <span ref={countUpRef} />  
+    )}
+  </CountUp>
+  {stat.suffix}
+</div>
+
 
           {/* Label */}
           <div
             className={`font-medium tracking-wide ${
-              isDigitalSecurityActive ? "text-[#8B4513]" : "text-[#15487d]"
+              isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
             }`}
+            style={{ fontFamily: '"Arial Narrow", Arial, sans-serif' }}
           >
             {stat.label}
           </div>

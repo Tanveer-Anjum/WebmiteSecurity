@@ -37,20 +37,26 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
             />
           </div>
 
-          {/* Back: Details */}
+          {/* Back: Details (White background) */}
           <div
-            className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-lg p-3 shadow-md bg-gradient-to-br from-orange-500 to-amber-600 border border-orange-400/50 flex flex-col"
+            className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-lg p-3 shadow-md flex flex-col bg-white"
             style={{ transform: "rotateY(180deg)" }}
           >
             <div className="text-center mb-1">
-              <div className="inline-block p-1.5 rounded bg-white/20">
+              <div className="inline-block p-1.5 rounded bg-gray-100">
                 <div className="w-5 h-5">{service.icon}</div>
               </div>
-              <h3 className="text-sm font-bold text-white mt-1">
+              <h3
+                className="!text-xl font-bold text-black mt-1"
+                style={{ fontFamily: "Arial, sans-serif" }}
+              >
                 {service.title}
               </h3>
             </div>
-            <p className="text-orange-100 text-xs text-center mb-1">
+            <p
+              className="text-gray-700 !text-xl text-center mb-1"
+              style={{ fontFamily: "Arial Narrow" }}
+            >
               {service.description.substring(0, 45)}...
             </p>
             <div className="mt-auto flex justify-center">
@@ -60,7 +66,7 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
                   setSelectedService(service);
                   setShowApplyModal(true);
                 }}
-                className="bg-amber-500 text-white py-1 px-2 rounded text-xs font-semibold hover:bg-amber-600 transition"
+                className="bg-blue-600 text-white py-1 px-3 rounded text-xs !font-bold transition hover:bg-blue-700"
               >
                 Apply
               </button>
@@ -68,19 +74,27 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
           </div>
         </motion.div>
       ) : (
-        // --- Mobile: Show stacked content (no flip) ---
-        <div className="w-full h-full rounded-lg overflow-hidden shadow-md bg-gradient-to-br from-orange-500 to-amber-600 border border-orange-400/50 flex flex-col">
+        // --- Mobile: White background card (no flip) ---
+        <div className="w-full h-full rounded-lg overflow-hidden shadow-md flex flex-col bg-white">
           <img
             src={service.image}
             alt={service.title}
             className="w-full h-24 object-cover"
           />
           <div className="p-3 text-center flex flex-col flex-grow">
-            <div className="inline-block p-1.5 rounded bg-white/20 mb-1">
+            <div className="inline-block p-1.5 rounded bg-gray-100 mb-1">
               <div className="w-5 h-5">{service.icon}</div>
             </div>
-            <h3 className="text-sm font-bold text-white mb-1">{service.title}</h3>
-            <p className="text-orange-100 text-xs mb-2">
+            <h3
+              className="!text-xl !font-bold text-black mb-1"
+              style={{ fontFamily: "Arial, sans-serif" }}
+            >
+              {service.title}
+            </h3>
+            <p
+              className="text-gray-700 !text-3xl mb-2"
+              style={{ fontFamily: "Arial Narrow" }}
+            >
               {service.description.substring(0, 45)}...
             </p>
             <button
@@ -89,7 +103,7 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
                 setSelectedService(service);
                 setShowApplyModal(true);
               }}
-              className="bg-amber-500 text-white py-1 px-2 rounded text-xs font-semibold hover:bg-amber-600 transition"
+              className="bg-[#0f3e70] text-white py-1 px-3 rounded text-xs !font-bold transition"
             >
               Apply
             </button>

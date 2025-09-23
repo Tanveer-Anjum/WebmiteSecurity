@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
+import { FaCheckCircle } from "react-icons/fa";
 import bigImg from "/assets/Images/girls.jpg";
 import smallImg1 from "/assets/Images/12.jpg";
 import smallImg2 from "/assets/Images/13.png";
@@ -51,12 +51,12 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-6 text-center lg:text-left"
+          className="space-y-6  lg:text-left"
         >
           {/* Heading */}
-          <div className="flex items-center gap-2 justify-center">
+          <div className="flex  gap-2 ">
             <header
-              className={`!font-bold text-xl ${
+              className={`!font-bold text-2xl ${
                 isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
               }`}
               style={{ fontFamily: "Arial, sans-serif" }}
@@ -67,7 +67,7 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
 
           {/* Title */}
           <h2
-            className={`!text-lg sm:!text-xl md:!text-xl !font-bold  justify-center text-center ${
+            className={`!text-lg sm:!text-xl md:!text-4xl !font-bold  ${
               isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"
             }`}
             style={{ fontFamily: "Arial, sans-serif" }}
@@ -77,8 +77,8 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
 
           {/* Description */}
           <p
-            className="text-gray-800 leading-relaxed text-sm sm:text-base md:text-lg justify-center align-center"
-            style={{ fontFamily: "Arial, sans-serif" }}
+            className="text-gray-800 text-sm sm:text-base md:text-lg"
+             style={{ fontFamily: "Arial Narrow"}}
           >
             Shehrity is a leading security services provider dedicated to
             ensuring safety through innovation and professionalism. With
@@ -86,23 +86,26 @@ const WhyChooseUs = ({ isDigitalSecurityActive }) => {
             solutions tailored for individuals, businesses, and communities.
           </p>
 
-          {/* Bullet Points */}
-          <ul className="space-y-3 text-sm sm:text-base text-gray-900">
-            {[
-              "Security Consulting",
-              "Private Security",
-              "Close Protections",
-              "24/7 Constant Support",
-            ].map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-3 text-gray-700 justify-center lg:justify-start"
-              >
-                
-                {item}
-              </li>
-            ))}
-          </ul>
+      
+<ul className="space-y-3 text-sm sm:text-base text-gray-900">
+  {[
+    "Security Consulting",
+    "Private Security",
+    "Close Protections",
+    "24/7 Constant Support",
+  ].map((item, index) => (
+    <li
+      key={index}
+      className="flex items-center gap-3 text-gray-700 justify-center lg:justify-start"
+    >
+      {/* Icon */}
+      <FaCheckCircle className="text-[#0a325e] text-lg flex-shrink-0" />
+
+      {/* Text */}
+      <span>{item}</span>
+    </li>
+  ))}
+</ul>
         </motion.div>
       </div>
     </section>

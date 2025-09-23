@@ -10,7 +10,7 @@ const ServicesSection = () => {
   const services = [
     {
       title: "On-Site Guards",
-      image: "/assets/Images/guardb.jpg",
+      image: "/assets/Images/guardb",
       details: "Professional security personnel deployed to protect your premises, assets, and people with vigilant patrols and rapid response.",
       description: "Trained professionals ensuring safety at every site.",
       icon: <FaUserShield className="w-7 h-7" />,
@@ -72,7 +72,7 @@ const ServicesSection = () => {
 
   return (
     <div className="py-16 bg-gray-50 ">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
           <ServiceCard
             key={index}

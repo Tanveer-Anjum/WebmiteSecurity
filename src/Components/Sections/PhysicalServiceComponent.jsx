@@ -38,7 +38,7 @@ export default function Service({isDigitalSecurityActive}) {
       }}
     >
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-blue-900/20"></div>
+      <div className="absolute inset-0"></div>
 
       {/* Content container */}
       <div className="relative z-10">
@@ -51,13 +51,13 @@ export default function Service({isDigitalSecurityActive}) {
           transition={{ duration: 0.5 }}
         >
           <div className="flex justify-center align-center">
-            <span className="!text-[#15487d] !font-bold px-2 py-1 rounded-full !text-xl  flex gap-1 
+            <span className="!text-[#15487d] !font-bold  px-2 py-1 rounded-full !text-xl md:!text-2xl  flex gap-1 
             "    style={{ fontFamily: "Arial, sans-serif" }}>
               Our Services
             </span>
           </div>
           <motion.h2
-            className={`!text-xl sm:!text-2xl md:!text-2xl !font-bold leading-tight ${ isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"}`}
+            className={`!text-xl sm:!text-2xl md:!text-4xl !font-bold leading-tight ${ isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"}`}
              style={{ fontFamily: "Arial, sans-serif" }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function Service({isDigitalSecurityActive}) {
 
           {/* ✅ Custom Navigation Buttons */}
           <button className="swiper-button-prev-custom absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-7 h-7 sm:w-8 sm:h-8 rounded-full shadow-sm flex items-center justify-center z-20 hover:bg-gray-200 duration-200">
-            <BiSolidLeftArrowAlt size={16} />
+            <BiSolidLeftArrowAlt size={16}/>
           </button>
           <button className="swiper-button-next-custom absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-7 h-7 sm:w-8 sm:h-8 rounded-full shadow-sm flex items-center justify-center z-20 hover:bg-gray-200 duration-200">
             <BiSolidRightArrowAlt size={16} />

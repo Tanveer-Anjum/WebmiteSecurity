@@ -51,7 +51,7 @@ const ServiceSlider = () => {
            style={{ fontFamily: "Arial, sans-serif" }}>
             Our Services
           </h1>
-          <p className="text-sm md:text-base max-w-xl !font-bold !text-[#15487d]"
+          <p className="text-sm md:text-xl  max-w-xl !font-bold !text-[#15487d]"
            style={{ fontFamily: "Arial, sans-serif" }}>
             Explore our services tailored for both physical and digital worlds.
           </p>
@@ -99,7 +99,7 @@ const ServiceSlider = () => {
               onClick={() => setCurrent(index)}
               className={`w-3 h-3 rounded-full border transition ${
                 current === index
-                  ? "bg-blue-700 border-blue-700"
+                  ? "bg-[#15487d] border-blue-700"
                   : "border-gray-300 bg-white/50"
               }`}
             />

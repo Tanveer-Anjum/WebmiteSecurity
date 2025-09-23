@@ -48,7 +48,7 @@ export default function Service({ isDigitalSecurityActive }) {
         >
        <div className="flex items-center gap-2 justify-center">
             <header
-              className={`font-bold text-sm sm:text-base ${
+              className={`!font-bold !text-2xl sm:text-bold ${
                 isDigitalSecurityActive ? "text-[#702829]" : "text-[#15487d]"
               }`}
               style={{ fontFamily: "Arial, sans-serif" }}
@@ -57,7 +57,7 @@ export default function Service({ isDigitalSecurityActive }) {
             </header>
           </div>
         <motion.h2
-  className={`text-2xl sm:text-xl md:text-2xl !font-bold leading-tight font-['Roboto_Condensed',sans-serif] 
+  className={`!text-2xl sm:!text-xl md:!text-4xl !font-bold "
     ${isDigitalSecurityActive ? "!text-black" : "text-[#15487d]"}`}
   style={{ fontFamily: "Arial, sans-serif" }}
   initial={{ opacity: 0, y: 30 }}
@@ -124,7 +124,10 @@ export default function Service({ isDigitalSecurityActive }) {
           </Swiper>
 
           {/* ✅ Custom Navigation Buttons */}
-          <button className="swiper-button-prev-custom absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-7 h-7 sm:w-8 sm:h-8 rounded-full shadow-sm flex items-center justify-center z-20 hover:bg-gray-200 duration-200">
+          <button className="swiper-button-prev-custom absolute left-1 
+          sm:-left-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-7 h-7
+           sm:w-8 sm:h-8 rounded-full shadow-sm flex items-center justify-center z-20
+            hover:bg-gray-200 duration-200">
             <BiSolidLeftArrowAlt size={16} />
           </button>
           <button className="swiper-button-next-custom absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 bg-white/80 text-black w-7 h-7 sm:w-8 sm:h-8 rounded-full shadow-sm flex items-center justify-center z-20 hover:bg-gray-200 duration-200">

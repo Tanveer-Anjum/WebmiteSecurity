@@ -54,7 +54,7 @@ export default function Footer() {
           {/* Column 1 */}
           <div>
             <img src="/assets/Images/Asset5.png" alt="Shehrity Logo" className="h-20 mb-4" />
-            <p className="text-md  text-bold"
+            <p className="text-lg  !text-bold"
                 style={{ fontFamily: "Arial, sans-serif" }}>
               Our team includes doormen, bodyguards, and patrol officers with over 15 years of combined experience.
             </p>
@@ -94,7 +94,7 @@ export default function Footer() {
                 style={{ fontFamily: "Arial, sans-serif" }}>
               Services We Offer
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-md">
               {serviceLinks.map((link) => (
                 <li
                   key={link}
@@ -117,7 +117,7 @@ export default function Footer() {
               style={{ fontFamily: "Arial, sans-serif" }}>
               Useful Links
             </h3>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-md">
               {usefulLinks.map((link) => (
                 <li
                   key={link}
@@ -140,7 +140,7 @@ export default function Footer() {
                 style={{ fontFamily: "Arial, sans-serif" }}>
               Contact Us
             </h3>
-            <ul className="space-y-4 text-sm">
+            <ul className="space-y-4 text-md">
               {contactInfo.map((item) => (
                 <li
                   key={item.text}
@@ -167,7 +167,7 @@ export default function Footer() {
           <p className='text-white'
               style={{ fontFamily: "Arial, sans-serif" }}>
           
-            Design & Devployed by  &copy; {new Date().getFullYear()} Webmintes. All Rights Reserved by Shahrity
+            Design & Deveployed by  &copy; {new Date().getFullYear()} Webmintes. All Rights Reserved by Shahrity
           </p>
           <div className="flex space-x-6 mt-2 md:mt-0">
             <a

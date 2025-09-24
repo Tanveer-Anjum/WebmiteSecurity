@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa"; 
-import img1 from "../assets/bg3.png";
+import img1 from "../assets/alaboutbg.jpg";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -23,8 +23,10 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
+
+
   <motion.div
-  className="relative w-full h-52 cursor-pointer"
+  className="relative w-full h-[20rem] cursor-pointer"
   variants={cardVariants}
   initial="hidden"
   whileInView="visible"
@@ -41,13 +43,13 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
   >
     {/* Front */}
     <div
-      className="absolute inset-0 w-full h-full rounded-lg overflow-hidden"
+      className="absolute inset-0 w-full h-full rounded-lg overflow-hidden !text-xl"
       style={{ backfaceVisibility: "hidden" }}
     >
       <img
         src={service.image}
         alt={service.title}
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover text-2xl"
       />
     </div>
 
@@ -63,7 +65,7 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
         {service.title}
       </h3>
       <p
-        className="text-gray-700 text-xs text-center mt-1 mb-2"
+        className="text-gray-900 text-2xl text-center  mt-1 mb-2"
         style={{ fontFamily: "Arial Narrow" }}
       >
         {service.description.substring(0, 50)}...
@@ -164,7 +166,7 @@ const PhysicalServices = ({ isDigitalSecurityActive }) => {
 
   return (
     <div
-      className="p-6"
+      className="p-6 h-full"
       style={{
         backgroundImage: `url(${img1})`,
         backgroundSize: "cover",
@@ -186,9 +188,10 @@ const PhysicalServices = ({ isDigitalSecurityActive }) => {
         digital infrastructure
       </motion.p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-20 ">
         {physicalServices.map((service) => (
           <ServiceCard
+        
             key={service.id}
             service={service}
             setSelectedService={setSelectedService}
@@ -199,7 +202,7 @@ const PhysicalServices = ({ isDigitalSecurityActive }) => {
 
       {/* 🔹 Modal */}
       {showApplyModal && selectedService && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 ">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -220,7 +223,7 @@ const PhysicalServices = ({ isDigitalSecurityActive }) => {
 
             {/* ✅ Bullet Points with dynamic check color */}
             {selectedService.highlights && (
-              <ul className="space-y-2 text-gray-800 text-sm">
+              <ul className="space-y-2 text-gray-800 text-md">
                 {selectedService.highlights.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <FaCheckCircle

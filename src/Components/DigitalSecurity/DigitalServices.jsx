@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa"; 
-import img1 from "../assets/bg3.png";
+import img1 from "../assets/alaboutbg.jpg";
 
 const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -15,7 +15,7 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
 
   return (
    <motion.div
-  className="relative w-full h-30 md:h-56 cursor-pointer"
+  className="relative w-full h-30 md:h-[20rem] cursor-pointer"
   onMouseEnter={() => !isMobile && setIsFlipped(true)}
   onMouseLeave={() => !isMobile && setIsFlipped(false)}
   whileHover={!isMobile ? { scale: 1.02 } : {}}
@@ -49,7 +49,7 @@ const ServiceCard = ({ service, setSelectedService, setShowApplyModal }) => {
           {service.title}
         </h3>
         <p
-          className="text-gray-700 text-xs text-center mb-2"
+          className="text-gray-900 text-2xl text-center mb-2"
           style={{ fontFamily: "Arial Narrow" }}
         >
           {service.description.substring(0, 45)}...
@@ -194,7 +194,7 @@ const DigitalServices = ({ isDigitalSecurityActive }) => {
     >
       {/* Title */}
       <motion.h1
-        className="text-2xl md:!text-3xl !font-bold mb-2 text-center"
+        className="text-2xl md:!text-4xl !font-bold mb-2 text-center"
         style={{ fontFamily: "Arial, sans-serif", color: primaryColor }}
       >
         Digital Security Services
@@ -203,7 +203,7 @@ const DigitalServices = ({ isDigitalSecurityActive }) => {
       {/* Subtitle */}
       <motion.p
         className="text-sm max-w-2xl mx-auto text-center"
-        style={{ fontFamily: "Arial, sans-serif", color: primaryColor }}
+        style={{ fontFamily: "Arial, sans-serif"}}
       >
         Enterprise-grade cybersecurity solutions designed to protect your
         digital infrastructure

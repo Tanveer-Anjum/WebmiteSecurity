@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import PhysicalServices from "./PhysicalServices";
 import { Shield, Eye, Lock, Users, CheckCircle } from "lucide-react";
 import d from "../assets/aboutbg2.jpg";
-import img1 from "../assets/bg2.jpg";
-import img2 from "../assets/bg2.jpg";
+import img1 from "../assets/alaboutbg.jpg";
+import img2 from "../assets/bg3.png";
 
 // Animation Variants
 const containerVariants = {
@@ -267,6 +267,7 @@ const fewColor = isDigitalSecurityActive ?"#000000" :"#15487d"
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.3, once: true }}
+       
       >
         <PhysicalServices isDigitalSecurityActive={isDigitalSecurityActive} />
       </motion.div>

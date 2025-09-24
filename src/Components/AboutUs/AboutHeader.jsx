@@ -44,7 +44,7 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
       <div className="relative z-10">
         {/* Intro Section */}
 
-        <motion.div
+        {/* <motion.div
           className="py-24 px-6 lg:px-12 pt-28"
           variants={fadeDown}
           initial="hidden"
@@ -66,7 +66,7 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
             specialize in cutting-edge cybersecurity, physical security, and
             rapid-response emergency services.
           </motion.p>
-        </motion.div>
+        </motion.div> */}
 
         {/* Hero Section */}
         <motion.section
@@ -108,7 +108,7 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
                   transition={{ duration: 0.7, ease: "easeOut" }}
                   style={{ fontFamily: "Arial, sans-serif" }}
                 >
-                  Welcome to Shehrity
+                HELLO! HERE WE ARE -
                 </motion.h1>
 
                 {/* Paragraph */}
@@ -118,10 +118,13 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                   style={{ fontFamily: "Arial Narrow" }}
                 >
-                  Since 1980, Shehrity has been a trusted name in security,
-                  serving businesses with unmatched expertise. As one of the
-                  nation’s leading security firms, our highly trained professionals
-                  deliver top-tier services tailored to your needs.
+               Shehrity is a premier private security company 
+               based in the state of Ohio, with our main office located in Columbus. 
+               We are dedicated to providing top-notch security services to our clients,
+                ensuring their safety and peace of mind at all times. Our team of highly-trained 
+                professionals is committed to delivering the highest level of security solutions 
+                tailored to meet the unique needs of each client. With years of experience 
+               in the industry, Shehrity is your trusted partner for all your security needs.
                 </motion.p>
 
                 {/* ✅ Event List */}
@@ -130,7 +133,7 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
                   variants={childVariants}
                   transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
                 >
-                  {["Event Security", "Armed Security", "Venue Security"].map(
+                  {["Event Security", " Bodyguard Security", " Office Security"," Bank Security"].map(
                     (item, i) => (
                       <motion.div
                         key={i}
@@ -148,10 +151,21 @@ const AboutHeader = ({ isDigitalSecurityActive }) => {
                         <span className="font-semibold text-lg text-black drop-shadow-md">
                           {item}
                         </span>
+                      
+                      
                       </motion.div>
                     )
                   )}
                 </motion.div>
+           <button
+  className={` font-bold text-xl px-3 py-2 rounded-full text-white 
+             transition-transform duration-300 hover:translate-y-[-4px] 
+             ${isDigitalSecurityActive ? "bg-[#702829]" :"bg-[#15487d]"}`}
+
+  style={{ borderRadius: "9999px", fontFamily: "Arial, sans-serif" }}
+>
+  Get A Quate
+</button>
               </motion.div>
 
               {/* Right Side - Image */}

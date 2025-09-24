@@ -39,10 +39,10 @@ const Preloader = ({ onFinish }) => {
       {/* Skip Button */}
       <button
         onClick={handleFinish}
-        className="absolute top-8 right-8 !bg-[#0f3e70] text-white px-4 py-2 rounded-full shadow-lg  transition transform hover:scale-105"
+        className="absolute top-8 right-8 !bg-[#0f3e70] text-white px-4 py-2 rounded-full shadow-lg  transition transform hover:scale-105 font-bold"
            style={{ borderRadius: "9999px", fontFamily: "Arial, sans-serif" }}
       >
-        Skip
+        Skip to Side
       </button>
     </div>
   );

@@ -10,7 +10,7 @@ import {
   Database,
 } from "lucide-react";
 import p from "../assets/aboutbg2.jpg";
-import img1 from "../assets/bg2.jpg";
+import img1 from "../assets/alaboutbg.jpg";
 import img2 from "../assets/bg3.png";
 
 // Animation Variants

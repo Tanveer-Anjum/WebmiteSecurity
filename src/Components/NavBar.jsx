@@ -97,13 +97,17 @@ const NavBar = ({ handleSecuritySwitch, isDigitalSecurityActive }) => {
         <div className="absolute right-6 hidden md:flex gap-4">
         
 
-        <CallSection/>
+        <CallSection isDigitalSecurityActive={isDigitalSecurityActive}/>
         
           <Link
             to="/enroll"
-            className={`px-4 py-2 rounded-full text-white !font-bold shadow-md !no-underline transform hover:scale-105 transition-all duration-300 ${isDigitalSecurityActive ? "bg-[#702829]" : "bg-[#15487d]"}`}
+            className={`px-4 py-2 rounded-full text-white !font-bold shadow-md !no-underline transform hover:scale-105 transition-all duration-300 ${isDigitalSecurityActive ? "bg-[#702829]" : "bg-[#15487d]"}`
+          
+          }
+          style={{fontFamily: "Arial, sans-serif" }}
           >
-            Get a Code
+        
+            Get a Quate
           </Link>
         </div>
 
